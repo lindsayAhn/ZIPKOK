@@ -1,0 +1,37 @@
+{% extends '../base.html' %}
+
+{% block csslink %}
+
+<link href="/assets/css/user.css" rel="stylesheet" type="text/css">
+{% endblock%}
+
+{% block content %}
+
+{% if request.GET.result == 'success' %}
+<script>
+	alert('정보 수정이 완료되었습니다.')
+</script>
+{% endif %}
+
+<div id="content" style="width:50%">
+<div id="user">
+	<form id="join-form" name="joinForm" method="post" action="{% url 'user:update' %}">
+		{% csrf_token %}
+<!--		<img src="{{user.photo.url}}" width="100"><br>-->
+		<label class="block-label" for="name">이름</label>
+		<input id="name" name="name" type="text" value="{{ user.name }}" class="formcontrol">
+
+<!--		<label class="block-label" for="email">이메일</label>-->
+		<input hidden="true" id="email" name="email" type="text" value="{{ user.email }}" class="formcontrol">
+
+<!--		<label class="block-label">패스워드 변경</label>-->
+		<input hidden="true" name="password" type="password" value="" class="formcontrol">
+
+
+		<input type="submit" value="수정하기" class="btn2">
+
+	</form>
+</div>
+</div>
+
+{% endblock%}

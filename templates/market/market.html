@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--{% url 'home' as home %}-->
+<!--{% if request.path == home %}-->
+<!--{% endif %}-->
+<!-- youtube -->
+<!--    <div class="slideshow-container">-->
+<!--        <div class="mySlides fade">-->
+<!--            <iframe width="100%" height="250" src="https://www.youtube.com/embed/qpUqD2ljTHM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--        </div>-->
+
+<!--        <a class="prev" onclick="plusSlides(-1)"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 5.5l-6 6.5 6 6.5L14 20l-7.5-8L14 4l1.5 1.5z" fill="#1b1c1d"></path></svg></a>-->
+<!--        <a class="next" onclick="plusSlides(1)"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 18.5l6-6.5-6-6.5L10 4l7.5 8-7.5 8-1.5-1.5z" fill="#1b1c1d"></path></svg></a>-->
+<!--    </div>-->
+<div>
+    <div class="slideshow-container">
+        <select name="category" style="width: 130px; height: 35px;">
+                        <option value="">카테고리</option>
+                        <option>디지털/가전</option>
+                        <option>가구/인테리어</option>
+                        <option>생활/가공식품</option>
+                        <option>스포츠/레저</option>
+                        <option>패션/잡</option>
+                        <option>게임/취미</option>
+                        <option>뷰티/미용</option>
+                        <option>반려동물용품</option>
+                        <option>도서/티켓/음반</option>
+                        <option>기타 중고물품</option>
+                    </select>
+        <button class="write" onClick="location.href=''">판매하기</button>
+    </div>
+    <div style="width:1000px; height:200px; background:beige; margin-left:9.3%; margin-top: 5%">
+        <div>
+            <p style="font-size: 30px;">혜택이 쏟아지는</p>
+            <p style="font-size: 30px;">ZIPKOK 제휴 이벤트</p>
+        </div>
+    </div>
+
+<div class="slideshow-container">
+    <div style="margin-left:2%; font-weight:bold; font-size:20px;">집콕 추천상품</div>
+</div>
+
+<div style="display: flex; justify-content: center; margin: 0 100px;">
+        <div style="padding:2%;">
+            <div style="width:200px; height:270px; margin:0 60px 10px 0; float:left; border-radius: 5px; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);">
+                <img style="width: 200px; border-radius: 5px 5px 0 0;" alt="중고상품 이미지" src="{% static 'market/1.png' %}">
+                <div style="text-align:center; margin-top:5%;">구찌 시계 상태 A</div>
+<!--                <hr size="1" color="#404040;" style="margin-right:30px; margin-left:30px;">-->
+                <div style="text-align:center; margin-top:10%;">43,000원</div>
+            </div>
+            <div style="width:200px; height:270px; margin:0 60px 10px 0; float:left; border-radius: 5px; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2); ">
+                <img style="width: 200px; height: 150px; border-radius: 5px 5px 0 0;" alt="중고상품 이미지" src="{% static 'market/2.png' %}">
+                <div style="text-align:center; margin-top:5%;">이케아 철제 선반 판매</div>
+                <div style="text-align:center; margin-top:10%;">5,000원</div>
+            </div>
+            <div style="width:200px; height:270px; margin:0 60px 10px 0; float:left; border-radius: 5px; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);">
+                <img style="width: 200px; height: 150px; border-radius: 5px 5px 0 0;" alt="중고상품 이미지" src="{% static 'market/3.png' %}">
+                <div style="text-align:center; margin-top:5%;">LG노트북 울트라 PC 14U380 판매합니다.</div>
+                <div style="text-align:center; margin-top:10%;">160,000원</div>
+            </div>
+            <div style="width:200px; height:270px; float:left; margin:0 60px 10px 0; border-radius: 5px; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);">
+                <img style="width: 200px; height: 200px; border-radius: 5px 5px 0 0;" alt="중고상품 이미지" src="{% static 'market/4.png' %}">
+                <div style="text-align:center; margin-top:5%;">아기쇼파 판매합니다.</div>
+                <div style="text-align:center; margin-top:5%;">20,000원</div>
+            </div>
+
+            <div style="width:200px; height:270px; margin:0 60px 10px 0; float:left; border-radius: 5px; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);">
+                <img style="width: 200px; border-radius: 5px 5px 0 0;" alt="중고상품 이미지" src="{% static 'market/5.png' %}">
+                <div style="text-align:center; margin-top:5%;">삼성 65인치 티비 팝니다.</div>
+<!--                <hr size="1" color="#404040;" style="margin-right:30px; margin-left:30px;">-->
+                <div style="text-align:center; margin-top:10%;">150,000원</div>
+            </div>
+            <div style="width:200px; height:270px; margin:0 60px 10px 0; float:left; border-radius: 5px; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2); ">
+                <img style="width: 200px; height: 150px; border-radius: 5px 5px 0 0;" alt="중고상품 이미지" src="{% static 'market/6.png' %}">
+                <div style="text-align:center; margin-top:5%;">동원참치 참치캔</div>
+                <div style="text-align:center; margin-top:10%;">15,000원</div>
+            </div>
+            <div style="width:200px; height:270px; margin:0 60px 10px 0; float:left; border-radius: 5px; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);">
+                <img style="width: 200px; height: 150px; border-radius: 5px 5px 0 0;" alt="중고상품 이미지" src="{% static 'market/7.png' %}">
+                <div style="text-align:center; margin-top:5%;">캠핑용품 3단우드쉘프세트</div>
+                <div style="text-align:center; margin-top:10%;">160,000원</div>
+            </div>
+            <div style="width:200px; height:270px; margin:0 60px 10px 0; float:left; border-radius: 5px; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);">
+                <img style="width: 200px; height: 150px; border-radius: 5px 5px 0 0;" alt="중고상품 이미지" src="{% static 'market/8.png' %}">
+                <div style="text-align:center; margin-top:5%;">코렐 그릇</div>
+                <div style="text-align:center; margin-top:10%;"><strong>무료나눔</strong></div>
+            </div>
+            <div style="width:200px; height:270px; margin:0 60px 10px 0; float:left; border-radius: 5px; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);">
+                <img style="width: 200px; border-radius: 5px 5px 0 0;" alt="중고상품 이미지" src="{% static 'market/1.png' %}">
+                <div style="text-align:center; margin-top:5%;">구찌 시계 상태 A</div>
+<!--                <hr size="1" color="#404040;" style="margin-right:30px; margin-left:30px;">-->
+                <div style="text-align:center; margin-top:10%;">43,000원</div>
+            </div>
+            <div style="width:200px; height:270px; margin:0 60px 10px 0; float:left; border-radius: 5px; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2); ">
+                <img style="width: 200px; height: 150px; border-radius: 5px 5px 0 0;" alt="중고상품 이미지" src="{% static 'market/2.png' %}">
+                <div style="text-align:center; margin-top:5%;">이케아 철제 선반 판매</div>
+                <div style="text-align:center; margin-top:10%;">5,000원</div>
+            </div>
+            <iframe style="margin-right:6.6%; background:lightgrey; visibility: hidden;" width="220" height="250" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style="margin-right:6.6%; background:lightgrey; visibility: hidden;" width="220" height="250" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style="margin-right:6.6%; background:lightgrey; visibility: hidden;" width="220" height="250" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style="background:lightgrey; visibility: hidden;" width="220" height="250" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        </div>
+</div>
+
+<a class="prev2" onclick="plusSlides(-1)"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 5.5l-6 6.5 6 6.5L14 20l-7.5-8L14 4l1.5 1.5z" fill="#1b1c1d"></path></svg></a>
+        <a class="next2" onclick="plusSlides(1)"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 18.5l6-6.5-6-6.5L10 4l7.5 8-7.5 8-1.5-1.5z" fill="#1b1c1d"></path></svg></a>
+
+    <script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+{% endblock %}

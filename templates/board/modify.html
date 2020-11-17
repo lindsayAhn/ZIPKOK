@@ -1,0 +1,65 @@
+{% extends '../base.html' %}
+{% load mathfilters %}
+
+{% block csslink %}
+<link href="/assets/css/board.css" rel="stylesheet" type="text/css">
+{% endblock%}
+
+{% block content %}
+<div id="board" class="slideshow-container">
+	<form class="board-form" method="post" action="{% url 'board:modify' page%}">
+		{% csrf_token %}
+		<table style="width:100%">
+			<input type="hidden" name="id" value="{{board.id}}">
+<!--			<input type="" name="idd" value="{{board.photo_set.all}}">-->
+			{% for photo in board.photo_set.all%}
+			<input type="hidden" name="idd" value="{{photo.id}}">
+
+				{% endfor %}
+<!--			<tr>-->
+
+<!--				<input type="file" name="imgs" multiple >-->
+<!--			</tr>-->
+<tr>
+				<td>
+				<select name="category" class="formcontrol" style="width:10%">
+					<option id="{{board.category}}" hidden="True">{{board.category}}</option>
+					<option>미술</option>
+					<option>공예</option>
+					<option>운동</option>
+					<option>음악/댄스</option>
+					<option>악기</option>
+					<option>요리</option>
+					<option>홈카페</option>
+					<option>영화감상</option>
+					<option>독서</option>
+					<option>기타</option>
+				</select>
+				</td>
+
+			</tr>
+			<tr>
+<!--				<td class="label">제목</td>-->
+				<td><input type="text" name="title" value="{{board.title}}" class="formcontrol" style="height:40px;"></td>
+			</tr>
+			<tr>
+<!--				<td class="label">내용</td>-->
+				<td>
+
+					<textarea id="content" name="content" class="formcontrol" style="height:200px;">{{board.content}}</textarea>
+
+				</td>
+
+			</tr>
+
+		</table>
+		<div class="bottom">
+<!--			<a href="{% url 'board:list' page %}">취소</a>-->
+<!--			<input type="submit" value="수정">-->
+			<input type="submit" value="수정" class="btn" style="float:right; margin-left:1%;">
+			<input type="button" value="취소" class="btn" onclick="location.href='{% url 'board:list' page %}?kwd={{kwd}}'" style="float:right">
+
+		</div>
+	</form>
+</div>
+{% endblock%}

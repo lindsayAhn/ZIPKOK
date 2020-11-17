@@ -1,0 +1,62 @@
+{% extends '../base.html' %}
+{% load mathfilters %}
+
+
+{% block content %}
+<div class="slideshow-container">
+<div id="board">
+	<form class="board-form" method="post" action="{% url 'board:write' page %}?kwd={{kwd}}" enctype="multipart/form-data">
+		{% csrf_token %}
+		{% if no %}
+			<input type="hidden" name="no" value="{{no}}">
+		{% else %}
+			<input type="hidden" name="no" value="-1">
+		{% endif %}
+
+		<table style="width:100%;">
+
+
+			<tr>
+				<td>
+				<select name="category" class="formcontrol" style="width:10%;">
+					<option value=""> </option>
+					<option>미술</option>
+					<option>공예</option>
+					<option>운동</option>
+					<option>음악/댄스</option>
+					<option>악기</option>
+					<option>요리</option>
+					<option>홈카페</option>
+					<option>영화감상</option>
+					<option>독서</option>
+					<option>기타</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+
+				<input type="file" name="imgs" multiple>
+			</tr>
+			<tr>
+<!--				<td class="label">제목</td>-->
+				<td><input type="text" name="title" placeholder="제목을 입력해주세요" class="formcontrol" style="height:40px;"></td>
+			</tr>
+
+			<tr>
+<!--				<td class="label">내용</td>-->
+				<td>
+					<textarea id="content" name="content" placeholder="내용을 입력해주세요" class="formcontrol" style="height:200px; "><div id="div"></div></textarea>
+				</td>
+			</tr>
+		</table>
+		<div class="bottom" >
+<!--			<a href="{% url 'board:list' page %}?kwd={{kwd}}">취소</a>-->
+			<input type="submit" value="등록" class="btn" style="float:right; margin-left:1%;">
+			<input type="button" value="취소" class="btn" onclick="location.href='{% url 'board:list' page %}?kwd={{kwd}}'" style="float:right">
+
+		</div>
+	</form>
+</div>
+	</div>
+
+{% endblock%}

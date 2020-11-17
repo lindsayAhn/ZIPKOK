@@ -1,0 +1,141 @@
+{% extends '../base.html' %}
+
+{% block csslink %}
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content%}
+{% url 'home' as home %}
+{% if request.path == home %}
+{% endif %}
+<!-- youtube -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/BnuOByiB-pg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/x1_wgN9tSoo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/SiNhaz8igEw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="220" height="250" src="https://www.youtube.com/embed/qpUqD2ljTHM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="mySlides fade">
+             <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/M7uOviwCHuA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/6IsCi3CW-oo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/3U1XqVi4chk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="220" height="250" src="https://www.youtube.com/embed/hNVyqaTPxP0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="mySlides fade">
+            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/IsO0UF04dNQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/c-dfaA3Bt1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/4Hndt-mUMgk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="220" height="250" src="https://www.youtube.com/embed/FDaIt_shORA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 5.5l-6 6.5 6 6.5L14 20l-7.5-8L14 4l1.5 1.5z" fill="#1b1c1d"></path></svg></a>
+        <a class="next" onclick="plusSlides(1)"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 18.5l6-6.5-6-6.5L10 4l7.5 8-7.5 8-1.5-1.5z" fill="#1b1c1d"></path></svg></a>
+    </div>
+
+
+
+<div class="slideshow-container2">
+        <div style="width: 46.5%; position: relative; display: inline-flex">
+            <table class="tbl-ex">
+		{% for board in boardlist %}
+			<tr>
+				{% if board.depth == 0 %}
+				<td style="text-align: left;">
+					{% if board.title == '삭제된 글입니다.'%}
+<!--                    {% for photo in board.photo_set.all%}-->
+<!--    							<img src="{{photo.image.url}}" width="50"><br>-->
+<!--							{% endfor %}-->
+						{{board.title}}
+					{% else %}
+<!--
+-->
+						<b><a href="{% url 'board:view' board.id page %}?kwd={{kwd}}" style="text-decoration:none; color:#404040; font-size:20px;">{{board.title}}</a></b>
+					{% endif %}
+				</td>
+            </tr>
+
+
+		{% else %}
+                <tr>
+                <td style="text-align: left;">
+				{% if board.title == '삭제된 글입니다.'%}
+<!--{% for photo in board.photo_set.all%}-->
+<!--    							<img src="{{photo.image.url}}" width="50"><br>-->
+<!--							{% endfor %}-->
+					{{board.title}}
+					{% else %}
+					<b><a href="{% url 'board:view' board.id page %}?kwd={{kwd}}" style="text-decoration:none; color:#404040;">{{board.title}}</a></b>
+					{% endif %}
+				</td>
+		{% endif %}
+                </tr>
+                <tr>
+				<td style="font-size:13px;">{{board.content|truncatechars:100}}</td>
+			</tr>
+
+		{% endfor %}
+
+	</table>
+        </div>
+        <hr size="1" color="#404040;" style="width:0px; height:200px; display:inline; position:absolute; border-right: 0px; margin-left:30px;">
+        <div style="width: 46.5%; position: relative; display: inline-flex; margin-left: 55px;" >
+            <article >
+    <header>
+        <div>
+            <div>
+                <img>
+            </div>
+            <div>
+                <h4><a>Author</a></h4>
+                <ul>
+                    <li><a href="#">12 days ago</a></li>
+                    <li><a href="#">Reply</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="uk-comment-body">
+        <p>하이</p>
+    </div>
+</article>
+        </div>
+         <div style="margin-top:20px;"></div>
+    <button style="width: 46.4%;" onClick="location.href='board/list'" class="homebutton">커뮤니티 더보기</button>
+    <button style="width: 46.4%; margin-left:50px;" onClick="location.href='market/market'" class="homebutton">중고장터 더보기</button>
+    </div>
+
+
+
+<br>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+{% endblock %}
