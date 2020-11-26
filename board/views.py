@@ -9,13 +9,49 @@ from board.models import Board, Comment, Photo
 from user.models import User
 import json
 
+def mylist(request, page=1):
+    kwd = request.GET.get('kwd')
+
+    if kwd is None or kwd == '' or kwd == 'null':
+        start = (page - 1) * PAGESIZE
+        board_count = Board.objects.count()
+        boardlist = Board.objects.all().order_by('-groupno', 'orderno')[start:start + PAGESIZE]
+
+    else:
+        start = (page - 1) * PAGESIZE
+        board_count = Board.objects.filter(title__contains=kwd).count()
+        boardlist = Board.objects.filter(title__contains=kwd).order_by('-groupno', 'orderno')[start:start + PAGESIZE]
+
+    data = {
+        'boardlist': boardlist,
+        'board_count': board_count,
+        'current_page': page,
+        'page': page,
+    }
+
+    kwd = request.GET.get('kwd')
+    if kwd is None:
+        data['kwd'] = json.dumps(kwd)
+    else:
+        data['kwd'] = kwd
+    return render(request, 'board/mylist.html', data)
+
+
+def mycomment(request):
+    comments = Comment.objects.all()
+
+    data = {
+        'comments' : comments,
+    }
+    return render(request, 'board/mycomment.html', data)
+
+
 
 def writeform(request, no=-1, page=1):
     # 인증
     authuser = request.session.get('authUser')
     if authuser is None:
         return HttpResponseRedirect('/board/list')
-
 
     if no == -1:
         return render(request, 'board/write.html',{"page":page})
@@ -89,6 +125,14 @@ def view(request, no=0, page=1):
         'page':page,
         'comments': comments
     }
+
+    # 검색어
+    kwd = request.GET.get('kwd')
+    if kwd is None:
+        data['kwd'] = json.dumps(kwd)
+    else:
+        data['kwd'] = kwd
+
     authuser = request.session.get('authUser')
     if authuser is None:
         return render(request, 'board/view.html', data)
@@ -100,14 +144,9 @@ def view(request, no=0, page=1):
     comment.comment_date = request.POST.get('comment_date')
     comment.comment_user = User.objects.get(id=request.session['authUser']['id'])
     comment.save()
-    # 검색어
-    kwd = request.GET.get('kwd')
-    if kwd is None:
-        data['kwd'] = json.dumps(kwd)
-    else:
-        data['kwd'] = kwd
 
     response = render(request, 'board/view.html', data)
+
     # [1] 로그인 확인
     if request.session.get('authUser') is None:
         cookie_name = 'hit'

@@ -4,61 +4,54 @@
 
 {% block content %}
 <link href="/assets/css/comment.css" rel="stylesheet" type="text/css">
-<div id="board" class="slideshow-container" style="margin: 0px 170px 0px 170px;">
-	<table class="formcontrol">
+<div id="board" class="slideshow-container" style="margin: 0px 200px 100px 200px;">
+	<table class="formcontrol" style="font-size:14px; ">
+
+
 		<tr>
-			<td style="text-align:center;">{{board.title}}</td>
+			<td style="padding: 2% 0 0.5% 3%; font-size: 16px;">{{board.category}}</td>
 		</tr>
 		<tr>
-			<td style="text-align:center;">
-				<hr size="1" color="#404040;" style="margin-right:10px; margin-left:10px;">
-				<a style="margin-right:3%;">카테고리: {{board.category}}</a>
-				<a style="margin-right:3%;">날짜: {{board.regdate|date:'Y-m-d '}} </a>
-				<a style="margin-right:3%;">작성자: {{board.user.name}} </a>
-				<a>조회수: {{board.hit}}</a>
-				<hr size="1" color="#404040;" style="margin-right:10px; margin-left:10px;">
+			<td class="bord_title"><span class="half_background">{{board.title}}</span></td>
+<!--			<td><span class="half_background">{{board.title}}</span></td>-->
+		</tr>
+		<tr>
+			<td>
+<!--				<hr size="1" color="#dadada;" style="margin-right:10px; margin-left:10px; border-color:#dadada;" >-->
+<!--				<a style="margin-left:2%; margin-right:3%;"><b style="color:#6E6CBF; font-size:13px">CATEGORY</b>  :  {{board.category}}</a>-->
+				<a style="margin-left:3%; margin-right:3%;"><b style="color:#6E6CBF; font-size:13px">DATE</b>  :  {{board.regdate|date:'Y-m-d '}} </a>
+				<a style="margin-right:3%;"><b style="color:#6E6CBF; font-size:13px">WRITER</b>  :  {{board.user.name}} </a>
+				<a><b style="color:#6E6CBF; font-size:13px">HIT</b>  :  {{board.hit}}</a>
+				<hr size="1" color="#dadada;" style="margin-right:10px; margin-left:10px; border-color:#dadada;">
 			</td>
 			<tr>
-		<td height="50px">
-			<div>
-				{% for photo in board.photo_set.all%}
-    			<img src="{{photo.image.url}}" width="200"><br>
-				{% endfor %}
-			</div>
-			<a style="margin-right:3%;">{{board.content}} </a>
-		</td>
-	</tr>
+				<td>
+					<div>
+						{% for photo in board.photo_set.all%}
+						<img src="{{photo.image.url}}" width="200" style="margin:3%;"><br>
+						{% endfor %}
+					</div>
+					<div style="white-space: pre-line; margin:3%; font-size: 15px;">{{board.content}} </div>
+
+					{% if request.session.authUser.email == board.user.email %}
+					<input type="button" value="삭제" class="btn" onclick="location.href='{% url 'board:delete' board.id page %}?kwd={{kwd}}'" style="float:right">
+					<input type="button" value="수정" class="btn" onclick="location.href='{% url 'board:modifyform' board.id page %}'" style="float:right; margin-right:1%;" >
+					{% endif %}
+
+				</td>
+
+			</tr>
 		</tr>
 	</table>
-	<div class="bottom">
-		<a href="{% url 'board:list' page %}?kwd={{kwd}}" class="submitcss2">글목록</a>
-		<svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-list-ul" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-</svg>
+<form method="post" action="{% url 'board:view' board.id page %}?kwd={{kwd}}" enctype="multipart/form-data">
+	{% csrf_token %}
 
-		{% if request.session.authUser is not None %}
-		<!--<a href="/board/writeform/{{board.id}}">답글</a>-->
-		<a href="{% url 'board:reply_writeform' board.id page %}?kwd={{kwd}}" class="submitcss2" style="z-index:99999">리포스트</a>
-		<svg style="position:relative" width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-reply-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path d="M9.079 11.9l4.568-3.281a.719.719 0 0 0 0-1.238L9.079 4.1A.716.716 0 0 0 8 4.719V6c-1.5 0-6 0-7 8 2.5-4.5 7-4 7-4v1.281c0 .56.606.898 1.079.62z"/>
-</svg>
-
-			{% if request.session.authUser.email == board.user.email %}
-<!--				<a href="{% url 'board:modifyform' board.id page %}" >글수정</a>-->
-<!--				<a href="{% url 'board:delete' board.id page %}?kwd={{kwd}}">글삭제</a>-->
-
-		<input type="button" value="글삭제" class="btn" onclick="location.href='{% url 'board:delete' board.id page %}?kwd={{kwd}}'" style="float:right">
-
-		<input type="button" value="글수정" class="btn" onclick="location.href='{% url 'board:modifyform' board.id page %}'" style="float:right; margin-right:1%;" >
-
-			{% endif %}
-		{% endif %}
-	</div>
-	<div style="font-size:14px">글목록 리포스트</div>
-
+	<input id="comment_textfield" name="comment_textfield" placeholder="댓글을 달려면 먼저 로그인을 해주세요:)" class="formcontrol" style="height:50px; width:87%; border-radius:3px; margin-top:3%;">
+	<input type="submit" value="등록" class="btn" style="height:50px; width:10%; border-radius:3px; margin-top:3%; font-size: 15px;">
+</form>
 
 	{% for comment in comments %}
-		<article class="uk-comment">
+		<article class="uk-comment" >
     <header class="uk-comment-header">
         <div class="uk-grid-medium uk-flex-middle" uk-grid>
             <div class="uk-width-auto">
@@ -79,19 +72,26 @@
             </div>
         </div>
     </header>
-    <div class="uk-comment-body" style="margin-top:-1.5%;">
+    <div class="uk-comment-body" style="margin-top:-2%;">
         <p>{{ comment.comment_textfield }}</p>
     </div>
+			<hr size="1" color="#dadada;" style="border-color:#dadada;">
 </article>
 {% endfor %}
-	<form method="post" action="{% url 'board:view' board.id page %}?kwd={{kwd}}" enctype="multipart/form-data">
-	{% csrf_token %}
 
-	<input id="comment_textfield" name="comment_textfield" placeholder="댓글을 달아주세요:)" class="formcontrol" style="height:100px; width:100%; border-radius:3px; margin-top:3%;">
-	<div><input type="submit" value="등록" class="btn" ></div>
-</form>
+
+	<div class="bottom">
+
+		<a href="{% url 'board:list' page %}?kwd={{kwd}}"><button class="bordbutton">글목록</button></a>
+
+		{% if request.session.authUser is not None %}
+		<!--<a href="/board/writeform/{{board.id}}">답글</a>-->
+
+		<a href="{% url 'board:reply_writeform' board.id page %}?kwd={{kwd}}"><button class="bordbutton">답글</button></a>
+
+		{% endif %}
+	</div>
 </div>
-
 <script>
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );

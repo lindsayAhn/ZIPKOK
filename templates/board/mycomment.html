@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<link href="/assets/css/comment.css" rel="stylesheet" type="text/css">
+<div class="slideshow-container" style="width:100%; float:left; margin:0px;" >
+{% for comment in comments %}
+	{% if request.session.authUser.name == comment.comment_user.name %}
+<article class="uk-comment" style="float:left; margin-left:9%; margin-bottom:3%; border: solid 1px; background: #fff; border-color: rgba(110, 108, 191, 0.6); min-width:280px; padding: 1% 0 1% 1%;" >
+	<header class="uk-comment-header">
+        <div class="uk-grid-medium uk-flex-middle" uk-grid>
+<!--            <div class="uk-width-auto">-->
+<!--                <img class="uk-comment-avatar" src="images/avatar.jpg" width="80" height="80" alt="">-->
+<!--            </div>-->
+            <div class="uk-width-expand">
+                <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset"><a style="margin-right:3%;"><b style="color:#6E6CBF; font-size:12px">WRITER</b>  :  {{ comment.comment_user.name }} </a></a></h4>
+                <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top" style="display:block;">
+                    <li><a ><a style="margin-right:3%;"><b style="color:#6E6CBF; font-size:12px">DATE</b>  :  {{ comment.comment_date|date:'Y-m-d ' }} </a></a></li>
+					{% if request.session.authUser.name == comment.comment_user.name %}
+
+					{% endif %}
+                </ul>
+            </div>
+        </div>
+    </header>
+	<hr size="1" color="#dadada;" style="border-color:#dadada; margin-top:-2%; margin-right:5%;">
+    <div class="uk-comment-body" style="margin-top:-6%;">
+		<p style="font-size:12px;"><span style="background: linear-gradient(to top, rgba(110, 108, 191, 0.1) 40%, transparent 50%);">{{ comment.comment_textfield |truncatechars:20}}</span></p>
+    </div>
+<!--			<hr size="1" color="#dadada;" style="border-color:#dadada;">-->
+</article>
+
+{% endif %}
+{% endfor %}
+</div>
+{% endblock %}
+

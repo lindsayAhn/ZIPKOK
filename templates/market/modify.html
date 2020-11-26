@@ -1,0 +1,55 @@
+{% extends '../base.html' %}
+{% load mathfilters %}
+
+{% block csslink %}
+<link href="/assets/css/board.css" rel="stylesheet" type="text/css">
+{% endblock%}
+
+{% block content %}
+<div id="board" class="slideshow-container">
+	<form class="board-form" method="POST" action="{% url 'market:modify' page%}">
+		{% csrf_token %}
+		<table style="width:100%">
+			<input type="hidden" name="id" value="{{market.id}}">
+<!--			<input type="" name="idd" value="{{board.photo_set.all}}">-->
+			{% for photo in market.photo_set.all%}
+			<input type="hidden" name="idd" value="{{photo.id}}">
+
+				{% endfor %}
+<tr>
+				<td>
+				<select name="category" class="formcontrol" style="width:10%">
+					<option id="{{market.category}}" hidden="True">{{market.category}}</option>
+					<option>디지털/가전</option>
+					<option>가구/인테리어</option>
+					<option>생활/가공식품</option>
+					<option>스포츠/레저</option>
+					<option>패션/잡</option>
+					<option>게임/취미</option>
+					<option>뷰티/미용</option>
+					<option>반려동물용품</option>
+					<option>도서/티켓/음반</option>
+					<option>기타 중고물품</option>
+				</select>
+				</td>
+
+			</tr>
+			<tr>
+				<td><input type="text" name="price" value="{{market.price}}" class="formcontrol" style="height:40px;"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="title" value="{{market.title}}" class="formcontrol" style="height:40px;"></td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="content" name="content" class="formcontrol" style="height:200px;">{{market.content}}</textarea>
+				</td>
+			</tr>
+		</table>
+		<div class="bottom">
+			<input type="submit" value="수정" class="btn" style="float:right; margin-left:1%;">
+			<input type="button" value="취소" class="btn" onclick="location.href='{% url 'market:list' page %}?kwd={{kwd}}'" style="float:right">
+		</div>
+	</form>
+</div>
+{% endblock %}

@@ -9,7 +9,7 @@ body {
 
 .logostyle {
     font-size: 50px;
-    color: #404040;
+    color: #6E6CBF;
     margin-left: 30px;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -73,16 +73,18 @@ body {
 .cursor{
     cursor: pointer;
 }
-
+/*커서에 마우스 올렸을 때 색상 변경*/
+.cursor:hover{color: #6E6CBF}
+.tr:hover{background: rgba(110, 108, 191, 0.1)}
 * {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
 img {vertical-align: middle;}
 
 .slideshow-container {
-  /*max-width: 1160px;*/
+  max-width: 1160px;
   position: relative;
-  margin: 0px 30px 0px 30px;
+  margin: 0px 30px 0px 55px;
   padding-top:20px;
 }
 
@@ -100,6 +102,7 @@ img {vertical-align: middle;}
 
 .prev, .next {
   cursor: pointer;
+  /*position: absolute;*/
   position: absolute;
   top: 50%;
   width: auto;
@@ -110,17 +113,7 @@ img {vertical-align: middle;}
   transition: 0.6s ease;
 }
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-}
+
 
 
 .prev2, .next2 {
@@ -137,7 +130,7 @@ img {vertical-align: middle;}
 
 
 .next {
-  right: 0;
+  right: 0%;
 }
 
 .next2 {
@@ -168,7 +161,7 @@ img {vertical-align: middle;}
     height:40px;
     border-style:initial;
     width:20%;
-    border-radius:3px;
+    border-radius:37px;
 }
 
 .categorybutton {
@@ -177,6 +170,15 @@ img {vertical-align: middle;}
     height:40px;
     border-style:initial;
     width:20%;
+    border-radius:3px;
+}
+
+.bordbutton {
+    /*color:white;*/
+    /*background:#6E6CBF;*/
+    height:40px;
+    border-style:initial;
+    width:10%;
     border-radius:3px;
 }
 
@@ -340,12 +342,12 @@ h4{
 
 .write {
     color:white;
-    background:#404040;
+    background:#6E6CBF;
     height:40px;
     border-style:initial;
     width:10%;
-    border-radius:3px;
-    margin-top:2%;
+    border-radius:37px;
+
     cursor:pointer;
 }
 
@@ -383,12 +385,13 @@ line-height:130px;
 }
 
 .formcontrol{
-    width: 100%;
+      width: 100%;
     position: relative;
     margin-bottom: 8px;
     padding: 7px 35px 10px 11px;
-    border: solid 1px #dadada;
+    border: solid 1px;
     background: #fff;
+    border-color: rgba(110, 108, 191, 0.2);
    }
 .formbox{
     width: 100%;
@@ -408,7 +411,7 @@ div.pager  ul {
 	margin:10px auto;
 }
 div.pager  ul li 			{ color:#ddd; display:inline-block; margin:5px 0; width:20px ; font-weight:bold; font-size:17px; margin-right:1%;}
-div.pager  ul li.selected	{ font-size:20px; text-decoration: underline; color:black; }
+div.pager  ul li.selected	{ font-size:20px; color:#6E6CBF; }
 div.pager  ul li a,
 div.pager  ul li a:visited,
 div.pager  ul li a:link,
@@ -430,16 +433,19 @@ div.pager  ul li a:hover	{ text-decoration: none; color:black; }div.pager {
 
 .btn{
     color:white;
-    background:#404040;
-    height:33px;
+    background:#6E6CBF;
+    height:40px;
     border-style:initial;
-    width:7%;
-    border-radius:3px;
+    width:5%;
+    border-radius:40px;
     cursor:pointer;
+    font-size:10px;
+    opacity:0.8;
+    float:right;
 }
 .btn2{
     color:white;
-    background:#404040;
+    background:#6E6CBF;
     height:33px;
     border-style:initial;
     width:20%;
@@ -477,14 +483,17 @@ div.pager  ul li a:hover	{ text-decoration: none; color:black; }div.pager {
 }
 table {
     border-collapse: collapse;
+
 }
 .table td, .table th {
     padding: .75rem;
     vertical-align: top;
     border-top: 1px solid #dee2e6;
+    font-size:14px;
 }
 th {
     text-align: inherit;
+    color:#6E6CBF;
 }
 .table td, .table th {
     padding: .75rem;
@@ -493,4 +502,150 @@ th {
 }
 *, ::after, ::before {
     box-sizing: border-box;
+}
+
+.socialAccountName{
+    display:inline-block;
+    font-size: 13px;
+}
+
+.socialAccountNameDetail{
+    font-size: 12px;
+}
+
+.socialAccountBox{
+    width:20%;
+    height: 150px;
+    display:inline-block;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: solid 1px lightgray;
+    padding: 15px;
+    margin: 20px 10px 10px 20px;
+    overflow:hidden;
+}
+
+.socialAccountBox:hover{
+    box-shadow: 5px 5px 5px 5px lightgray;
+    overflow:auto;
+    overflow-x: hidden;
+}
+
+.socialAccountBox::-webkit-scrollbar {
+    width: 5px;
+  }
+  .socialAccountBox::-webkit-scrollbar-thumb {
+    background-color: #404040;
+      border-radius: 5px;
+  }
+  .socialAccountBox::-webkit-scrollbar-track {
+    background-color: whitesmoke;
+      border-radius: 5px;
+  }
+
+
+.socialAccountBox2{
+    width:20%;
+    height: 150px;
+    display:inline-block;
+    background-color: #DCEBFF;
+    border-radius: 5px;
+    border: solid 1px lightgray;
+    padding: 15px;
+    margin: 20px 10px 10px 20px;
+    overflow:hidden;
+}
+
+.socialAccountBox2:hover{
+    box-shadow: 5px 5px 5px 5px lightgray;
+    overflow:auto;
+    overflow-x: hidden;
+}
+
+.socialAccountBox2::-webkit-scrollbar {
+    width: 5px;
+  }
+  .socialAccountBox2::-webkit-scrollbar-thumb {
+    background-color: #404040;
+      border-radius: 5px;
+  }
+  .socialAccountBox2::-webkit-scrollbar-track {
+    background-color: DCEBFF;
+      border-radius: 5px;
+  }
+
+.socialAccountButton{
+   background: inherit ;
+    border:none;
+    box-shadow:none;
+    border-radius:0;
+    padding:10px;
+    overflow:visible;
+    cursor:pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.formTitle {
+    font-size: 30px;
+    color: #444444;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+.market_card {
+    width:200px;
+    margin: 0 15px 10px 15px;
+    float:left;
+    cursor: pointer;
+}
+
+.market_img {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+.market_text {
+    font-size: 13px;
+    padding: 2px 15px;
+}
+.progress-bar {
+    margin-top:0.5%;
+    position:absolute;
+    height:2px;
+    background:#eee;
+    width:100%;
+}
+.progress-bar::before {
+    content:'';
+    display:block;
+    position:absolute;
+    left:0;
+    top:0;
+    height:4px;
+    background:#6E6CBF;
+    -webkit-animation:10s loading infinite;
+    animation:10s loading infinite;
+}
+@-webkit-keyframes loading {
+    0% {width:0;}
+    100% {width:100%;}
+}
+@keyframes loading {
+    0% {width:0;}
+    100% {width:100%;}
+}
+.half_background {
+background: linear-gradient(to top, rgba(110, 108, 191, 0.4) 40%, transparent 50%);
+}
+
+.bord_title{
+    padding-left:3%;
+    padding-bottom: 2%;
+    /*padding-top:2%;*/
+    font-size: 20px;
+
 }

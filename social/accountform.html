@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<script src="/assets/js/jquery/jquery-1.9.0.js"></script>
+<script src="{% static 'js/jquery/accountform_category.js' %}" type="text/javascript"></script>
+
+<div>
+
+            <a class="category">
+                <p onClick="location.href='art'" class="cursor">미술</p>
+                <p onClick="location.href='craft'" class="cursor">공예</p>
+                <p onClick="location.href='workout'" class="cursor">운동</p>
+                <p onClick="location.href='musicdance'" class="cursor">음악/댄스</p>
+                <p onClick="location.href='instrument'" class="cursor">악기</p>
+                <p onClick="location.href='cook'" class="cursor">요리</p>
+                <p onClick="location.href='homecafe'" class="cursor">홈카페</p>
+                <p onClick="location.href='movies'" class="cursor">영화감상</p>
+                <p onClick="location.href='books'" class="cursor">독서</p>
+                <p onClick="location.href='etc'" class="cursor">기타</p>
+                <p onClick="location.href='accountform'" class="cursor" style="color: #6E6CBF;">계정 추천</p>
+            </a>
+</div>
+<div id="content" style="width:50%">
+        <fieldset class="accountform">
+            <div style="display:flex;">
+		        <p class="formTitle">계정 추천</p>
+	        </div>
+            <div style="display:flex;">
+        <form id="accountform" name="accountform" action="{% url 'social:recommendation' %}" method="post">
+            {% csrf_token %}
+
+        <tr>
+            <th><a style="color: #ff0000;">*</a> 카테고리</th><br>
+            <td>
+                <select name="questType" id="select1" class="formcontrol" onChange="account(this.value)" style="width:49%;" >
+                    <option value="0">-</option>
+                    <option value="1">미술</option>
+                    <option value="2">공예</option>
+                    <option value="3">운동</option>
+                    <option value="4">음악/댄스</option>
+                    <option value="5">악기</option>
+                    <option value="6">요리</option>
+                    <option value="7">홈카페</option>
+                    <option value="8">영화감상</option>
+                    <option value="9">독서</option>
+                    <option value="10">기타</option>
+                </select>
+                <select id="lowaccount" class="formcontrol" name="lowaccount"   style="width:49%;" >
+                </select>
+            </td>
+        <p></p>
+            <th><a style="color: red;">*</a> url 주소</th><br>
+            <td>
+                <input name="urladress" type="url" value="" id="urladress" class="formcontrol">
+            </td>
+        <p></p>
+            <th>추천 이유</th><br>
+            <td>
+                <input name="recommendationReason" type="text" value="" class="formcontrol" style="height: 80px">
+            </td>
+        </tr>
+        <p></p>
+            {% if request.session.authUser is not None %}
+            <input type="submit" value="제출" class="btn3" id="dontSubmit">
+            {% endif %}
+            <p></p>
+            {% if request.session.authUser is None %}
+            <div style="color:red; padding-bottom:5px;">* 로그인이 필요한 서비스입니다.</div>
+            {% endif %}
+            <a style="color: red;">*</a> 회원님의 추천 계정은 관리자가 세부 카테고리와의 적정성 판단 후 홈페이지에 추가됩니다.
+        </form>
+
+        </div>
+    </fieldset>
+</div>
+
+{% endblock %}

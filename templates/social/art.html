@@ -3,7 +3,7 @@
 {% block content %}
 <div>
             <a class="category">
-                <p onClick="location.href='art'" class="cursor">미술</p>
+                <p onClick="location.href='art'" class="cursor" style="color: #6E6CBF; font-weight:bold;">미술</p>
                 <p onClick="location.href='craft'" class="cursor">공예</p>
                 <p onClick="location.href='workout'" class="cursor">운동</p>
                 <p onClick="location.href='musicdance'" class="cursor">음악/댄스</p>
@@ -13,115 +13,503 @@
                 <p onClick="location.href='movies'" class="cursor">영화감상</p>
                 <p onClick="location.href='books'" class="cursor">독서</p>
                 <p onClick="location.href='etc'" class="cursor">기타</p>
+                <p onClick="location.href='accountform'" class="cursor">계정 추천</p>
             </a>
     </div>
 <div class="slideshow-container">
     <button style="width: 15%;" class="categorybutton">아이패드 드로잉</button>
+    <button class="socialAccountButton" onclick="document.getElementById('art01').style.display=(document.getElementById('art01').style.display=='block') ? 'none' : 'block';">
+        >
+    </button>
     <p></p>
     <!--유튜브-->
-    <svg height="3%" viewBox="0 -77 512.00213 512" width="3%" xmlns="http://www.w3.org/2000/svg"><path d="m501.453125 56.09375c-5.902344-21.933594-23.195313-39.222656-45.125-45.128906-40.066406-10.964844-200.332031-10.964844-200.332031-10.964844s-160.261719 0-200.328125 10.546875c-21.507813 5.902344-39.222657 23.617187-45.125 45.546875-10.542969 40.0625-10.542969 123.148438-10.542969 123.148438s0 83.503906 10.542969 123.148437c5.90625 21.929687 23.195312 39.222656 45.128906 45.128906 40.484375 10.964844 200.328125 10.964844 200.328125 10.964844s160.261719 0 200.328125-10.546875c21.933594-5.902344 39.222656-23.195312 45.128906-45.125 10.542969-40.066406 10.542969-123.148438 10.542969-123.148438s.421875-83.507812-10.546875-123.570312zm0 0" fill="#f00"/><path d="m204.96875 256 133.269531-76.757812-133.269531-76.757813zm0 0" fill="#fff"/></svg></p>
     <p></p>
-    <div style="width:100%">
-    <div style="width:20%; display:inline-block;">
-    <a class="yt-simple-endpoint style-scope ytd-video-owner-renderer" tabindex="-1" href="https://m.youtube.com/channel/UCwqPe-wwzevhN32FkxeguXA"><yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
-    <img id="img" class="style-scope yt-img-shadow" alt="" width="48" src="https://yt3.ggpht.com/a/AATXAJxRRA9J-OKPazBCSTt59dgWySUCcmPhdPm3d-1w=s88-c-k-c0x00ffffff-no-rj"></yt-img-shadow></a>
-    <h4 style="display:inline-block;">완두WANDOO</h4>
-    <p style="font-size: 12px">완두의 개인적인 취미 공간 . 그림. 여행. 영상. 일상</p>
-    </div>
+    <div style="width:100%; display: none;" id="art01">
 
-     <div style="width:20%; display:inline-block;">
-    <a class="yt-simple-endpoint style-scope ytd-video-owner-renderer" tabindex="-1" href="https://m.youtube.com/channel/UCwqPe-wwzevhN32FkxeguXA"><yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
-    <img id="img" class="style-scope yt-img-shadow" alt="" width="48" src="https://yt3.ggpht.com/a/AATXAJwPAdJYXJ4nPW4xFef8fj-d0kyhsq8US5UEux_C=s88-c-k-c0x00ffffff-no-rj"></yt-img-shadow></a>
-    <h4 style="display:inline-block;">Olivechoi올리브최</h4>
-    <p style="font-size: 12px">아이패드로 함께 그림 그려요.</p>
-    </div>
-     <div style="width:20%; display:inline-block;">
-    <a class="yt-simple-endpoint style-scope ytd-video-owner-renderer" tabindex="-1" href="https://m.youtube.com/channel/UCwqPe-wwzevhN32FkxeguXA"><yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
-    <img id="img" class="style-scope yt-img-shadow" alt="" width="48" src="https://yt3.ggpht.com/a/AATXAJwBN_-7oMVE24MrklTrIzNUK5nfWDXUvnX43hg6=s88-c-k-c0x00ffffff-no-rj"></yt-img-shadow></a>
-    <h4 style="display:inline-block;">밍스취미mings</h4>
-    <p style="font-size: 12px">안녕하세요. 밍스입니다.<br>다양한 취미생활을 소개하는 채널을 만들어가고 있습니다💙</p>
-    </div>
-<div style="width:20%; display:inline-block;">
-<svg onclick="location.href='accountform'" style="cursor: pointer;" fill="#404040" height="50" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm112 277.332031h-90.667969v90.667969c0 11.777344-9.554687 21.332031-21.332031 21.332031s-21.332031-9.554687-21.332031-21.332031v-90.667969h-90.667969c-11.777344 0-21.332031-9.554687-21.332031-21.332031s9.554687-21.332031 21.332031-21.332031h90.667969v-90.667969c0-11.777344 9.554687-21.332031 21.332031-21.332031s21.332031 9.554687 21.332031 21.332031v90.667969h90.667969c11.777344 0 21.332031 9.554687 21.332031 21.332031s-9.554687 21.332031-21.332031 21.332031zm0 0"/></svg>
-    <a style="font-size:12px;">관심 유튜브를 추가하세요!</a>
-</div>
-    </div>
-    <p></p>
+
+        <!--        계정 하나-->
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.youtube.com/channel/UCpgsOq0-uW2PFLh-uNeZwxQ')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/a/AATXAJxRRA9J-OKPazBCSTt59dgWySUCcmPhdPm3d-1w=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">완두WANDOO</h4>
+        <hr>
+        <p class="socialAccountNameDetail">완두콩간 Wandooㅣ 완두의 개인적인 취미 공간 . 그림. 여행. 영상. 일상<br>
+<br>
+제 일러스트를 모작 시에 올리실때에는 출처를 밝혀주시고 꼭 모작표기를 부탁드립니다 :)<br>
+개인적인 연습용만 가능하며, 상업적이용 불가, 도용 및 수정과 복제등을 금지합니다!<br>
+감사합니다!<br>
+-<br>
+Contact<br>
+shinkaron@nate.com<br>
+        </p>
+        </div>
+
+        <!--        계정 하나-->
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://m.youtube.com/channel/UCwqPe-wwzevhN32FkxeguXA')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/ytc/AAUvwniZ73DIdZd-8zBuUtgijXmT_sZyHrMnvrMvKE8TrC8=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">sᴛᴇʟʟᴀ ғɪʟᴍ</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+📷<br>
+Stella film<br>
+일상/취미<br>
+아이패드/맥북/아이폰 활용 영상을 올립니다 :)<br>
+<br>
+daily life/hobbies<br>
+I pad/Macbook/I phone<br>
+<br>
+e-mail : stellafilmstory@gmail.com<br>
+instagram: stellafilmstory<br>
+        </p>
+        </div>
+
+
+        <!--        계정 하나-->
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.youtube.com/c/%EB%A6%AC%EB%8B%88Rini')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/ytc/AAUvwnjMq--e8ZRhEsadcI951z-1VpbPnkHZySVH1lLY=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">리니Rini</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+안녕하세요, 일러스트레이터 리니(Rini) 입니다-!<br>
+디자인을 전공한 후 일러스트 작업을 하며, 그림에 관련된 여러 가지 일을 하고 사는 프리랜서입니다😃💜<br>
+<br>
+Email: xoxo_rini@naver.com<br>
+Instagram: https://www.instagram.com/xoxo_rini/<br>
+Grafolio: https://www.grafolio.com/xoxo_rini<br>
+<br>
+💜리니의 온라인 드로잉 클래스들💜<br>
+⠀<br>
+꿈꾸는 일상 공간 속의 나, 리니와 기초부터 배우는 아이패드 드로잉<br>
+https://class101.app/rini3-class<br>
+⠀<br>
+드로잉 기초부터 시작하는 리니의 펜 드로잉<br>
+http://bit.ly/rini-class<br>
+⠀<br>
+마카와 펜, 드로잉북만 들고 떠나요! 마카로 담는 여행의 특별한 기억<br>
+https://101.gg/rini2-class<br>
+<br>
+💜Rini's Online drawing classes💜<br>
+<br>
+Marker drawing class (US etc)<br>
+en.class101.net/products/rini<br>
+<br>
+Pen drawing class (US etc)<br>
+en.class101.net/products/rini-pen<br>
+<br>
+Marker drawing class (Japan)<br>
+bit.ly/380SrjE<br>
+        </p>
+        </div>
+
+        <!--        계정 하나-->
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.youtube.com/channel/UC27AsFI03XkFXz0vJ1tS0Pw')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/a/AATXAJzjLofx8Ie-feBdj7vRpH5VSVfe1KvBqobtlufv=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">빨간고래의 드로잉</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+귀엽고 따뜻한 것들을 그려요.<br>
+일러스트레이터 빨간고래의 드로잉 채널입니다.<br>
+<br>
+Hello! My name is REDWHALE.<br>
+draw cute !<br>
+<br>
+#빨간고래 #일러스트 #다이어리 #다꾸 #드로잉 #drawing #illust<br>
+        </p>
+        </div>
+
+
+
+    <!--        계정 하나-->
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.youtube.com/channel/UCpgsOq0-uW2PFLh-uNeZwxQ')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/a/AATXAJxRRA9J-OKPazBCSTt59dgWySUCcmPhdPm3d-1w=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">완두WANDOO</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+완두콩간 Wandooㅣ 완두의 개인적인 취미 공간 . 그림. 여행. 영상. 일상<br>
+<br>
+제 일러스트를 모작 시에 올리실때에는 출처를 밝혀주시고 꼭 모작표기를 부탁드립니다 :)<br>
+개인적인 연습용만 가능하며, 상업적이용 불가, 도용 및 수정과 복제등을 금지합니다!<br>
+감사합니다!<br>
+-<br>
+Contact<br>
+shinkaron@nate.com<br>
+        </p>
+        </div>
+
+
+
+
+
+
+
     <!--인스타-->
-    <svg height="3%" viewBox="0 0 512 512.00038" width="3%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><radialGradient id="a" cx="104.9571229418" cy="447.4474330468" gradientUnits="userSpaceOnUse" r="564.64588968"><stop offset="0" stop-color="#fae100"/><stop offset=".0544" stop-color="#fadc04"/><stop offset=".1167" stop-color="#fbce0e"/><stop offset=".1829" stop-color="#fcb720"/><stop offset=".2514" stop-color="#fe9838"/><stop offset=".3054" stop-color="#ff7950"/><stop offset=".4922" stop-color="#ff1c74"/><stop offset="1" stop-color="#6c1cd1"/></radialGradient><linearGradient id="b" gradientUnits="userSpaceOnUse" x1="196.3726539866" x2="-671.0159540134" y1="222.4596783332" y2="-265.4464136668"><stop offset="0" stop-color="#a1b5d8" stop-opacity="0"/><stop offset=".3094" stop-color="#90a2bd" stop-opacity=".309804"/><stop offset=".7554" stop-color="#7c8b9c" stop-opacity=".756863"/><stop offset="1" stop-color="#748290"/></linearGradient><linearGradient id="c" gradientUnits="userSpaceOnUse" x1="256.0003" x2="256.0003" y1="451.9660859688" y2="531.773969673"><stop offset="0" stop-color="#fae100" stop-opacity="0"/><stop offset=".3068" stop-color="#fca800" stop-opacity=".305882"/><stop offset=".6275" stop-color="#fe7300" stop-opacity=".627451"/><stop offset=".8685" stop-color="#ff5200" stop-opacity=".866667"/><stop offset="1" stop-color="#ff4500"/></linearGradient><linearGradient id="d"><stop offset="0" stop-color="#833ab4" stop-opacity="0"/><stop offset="1" stop-color="#833ab4"/></linearGradient><linearGradient id="e" gradientUnits="userSpaceOnUse" x1="226.8724066998" x2="100.1606848024" xlink:href="#d" y1="226.147987369" y2="99.4361650794"/><linearGradient id="f" gradientUnits="userSpaceOnUse" x1="350.899540777" x2="287.6555669352" xlink:href="#d" y1="468.287448276" y2="170.1375727138"/><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="374.965057" x2="120.9410670648" xlink:href="#d" y1="374.9649673922" y2="120.9408770648"/><linearGradient id="h" gradientUnits="userSpaceOnUse" x1="393.806665096" x2="309.8058007666" xlink:href="#d" y1="221.2631037014" y2="137.2623397642"/><linearGradient id="i" gradientUnits="userSpaceOnUse" x1="357.6582448576" x2="150.5426107646" y1="155.0495285836" y2="362.1651626766"><stop offset="0" stop-color="#833ab4"/><stop offset=".0922" stop-color="#9c3495"/><stop offset=".2927" stop-color="#dc2546"/><stop offset=".392" stop-color="#fd1d1d"/><stop offset=".5589" stop-color="#fc6831"/><stop offset=".6887" stop-color="#fc9b40"/><stop offset=".7521" stop-color="#fcaf45"/><stop offset=".7806" stop-color="#fdb750"/><stop offset=".8656" stop-color="#fecb6a"/><stop offset=".9415" stop-color="#ffd87a"/><stop offset="1" stop-color="#ffdc80"/></linearGradient><path d="m503.234375 91.578125c-4.660156-43.664063-39.144531-78.15625-82.8125-82.8125-109.507813-11.6875-219.335937-11.6875-328.839844 0-43.667969 4.660156-78.15625 39.148437-82.816406 82.8125-11.6875 109.503906-11.6875 219.335937 0 328.839844 4.660156 43.667969 39.148437 78.15625 82.8125 82.816406 109.503906 11.6875 219.335937 11.6875 328.84375 0 43.667969-4.660156 78.152344-39.148437 82.8125-82.816406 11.6875-109.503907 11.6875-219.332031 0-328.839844zm0 0" fill="url(#a)"/><path d="m475.386719 110.097656c-4.132813-38.746094-34.734375-69.351562-73.484375-73.488281-97.171875-10.367187-194.632813-10.367187-291.804688 0-38.746094 4.136719-69.351562 34.742187-73.488281 73.488281-10.367187 97.171875-10.367187 194.632813 0 291.800782 4.136719 38.75 34.742187 69.355468 73.488281 73.488281 97.171875 10.371093 194.632813 10.371093 291.800782 0 38.75-4.132813 69.355468-34.738281 73.488281-73.488281 10.371093-97.167969 10.371093-194.628907 0-291.800782zm0 0" fill="url(#b)"/><path d="m7.671875 409.804688c.351563 3.539062.714844 7.078124 1.09375 10.617187 4.660156 43.664063 39.148437 78.152344 82.816406 82.8125 109.503907 11.6875 219.335938 11.6875 328.839844 0 43.667969-4.660156 78.152344-39.148437 82.8125-82.8125.378906-3.539063.742187-7.078125 1.097656-10.617187zm0 0" fill="url(#c)"/><path d="m503.234375 420.417969c6.28125-58.839844 9.179687-117.773438 8.710937-176.699219l-117.03125-117.03125c-14.621093-16.691406-35.976562-27.109375-61.070312-28.011719-51.605469-1.859375-103.375-1.765625-154.988281.007813-42.867188 1.476562-72.84375 30.289062-80.53125 72.636718-1.355469 7.476563-2.167969 15.050782-3.234375 22.582032v124.148437c.589844 4.023438 1.457031 8.027344 1.726562 12.074219 1.71875 25.757812 12.304688 47.820312 29.253906 62.746094l119.09375 119.089844c58.445313.410156 116.894532-2.496094 175.257813-8.726563 43.667969-4.660156 78.152344-39.148437 82.8125-82.816406zm0 0" fill="url(#e)"/><path d="m503.234375 420.421875c-4.65625 43.660156-39.152344 78.15625-82.8125 82.8125-58.355469 6.226563-116.816406 9.136719-175.253906 8.726563l-118.914063-118.914063c13.785156 12.066406 31.753906 19.414063 52.605469 20.199219 51.601563 1.9375 103.382813 1.886718 154.984375.027344 46.671875-1.6875 80.445312-36.230469 81.902344-82.902344 1.554687-49.554688 1.554687-99.238282 0-148.792969-.664063-21.53125-8.222656-40.476563-20.753906-54.8125l116.957031 116.957031c.460937 58.917969-2.4375 117.859375-8.714844 176.699219zm0 0" fill="url(#f)"/><path d="m316.414062 200.558594c-14.992187-16.324219-36.503906-26.566406-60.414062-26.566406-45.289062 0-82.007812 36.71875-82.007812 82.007812 0 23.910156 10.242187 45.421875 26.566406 60.414062l189.738281 189.738282c10.042969-.875 20.085937-1.847656 30.121094-2.917969 43.667969-4.660156 78.15625-39.148437 82.816406-82.816406 1.070313-10.035157 2.042969-20.078125 2.917969-30.121094zm0 0" fill="url(#g)"/><path d="m511.007812 311.152344-152.703124-152.699219c-3.5625-4.675781-9.175782-7.710937-15.507813-7.710937-10.773437 0-19.511719 8.734374-19.511719 19.511718 0 6.332032 3.035156 11.945313 7.710938 15.507813l177.28125 177.285156c1.203125-17.292969 2.113281-34.59375 2.730468-51.894531zm0 0" fill="url(#h)"/><path d="m95.089844 193.902344c1.066406-7.53125 1.878906-15.105469 3.234375-22.582032 7.683593-42.347656 37.664062-71.160156 80.53125-72.636718 51.613281-1.773438 103.382812-1.867188 154.988281-.007813 46.65625 1.679688 80.445312 36.226563 81.902344 82.898438 1.550781 49.558593 1.550781 99.238281 0 148.796875-1.457032 46.671875-35.234375 81.214844-81.898438 82.898437-51.605468 1.863281-103.386718 1.910157-154.988281-.027343-46.664063-1.753907-78.921875-36.378907-82.042969-83.121094-.269531-4.042969-1.136718-8.050782-1.726562-12.074219 0-41.382813 0-82.765625 0-124.144531zm160.953125 191.707031c23.617187 0 47.257812.707031 70.84375-.164063 36.980469-1.371093 59.726562-23.441406 60.589843-60.386718 1.070313-46.035156 1.070313-92.132813 0-138.171875-.863281-36.9375-23.625-59.523438-60.589843-60.308594-46.917969-.992187-93.886719-.984375-140.804688 0-36.683593.769531-59.496093 22.898437-60.492187 59.429687-1.265625 46.617188-1.265625 93.316407 0 139.933594.996094 36.527344 23.808594 58.144532 60.496094 59.503906 23.289062.867188 46.636718.164063 69.957031.164063zm0 0" fill="url(#i)"/><g fill="#fff"><path d="m95.089844 193.902344c1.066406-7.53125 1.878906-15.105469 3.234375-22.582032 7.683593-42.347656 37.664062-71.160156 80.53125-72.636718 51.613281-1.773438 103.382812-1.867188 154.988281-.007813 46.65625 1.679688 80.445312 36.226563 81.902344 82.898438 1.550781 49.558593 1.550781 99.238281 0 148.796875-1.457032 46.671875-35.234375 81.214844-81.898438 82.898437-51.605468 1.863281-103.386718 1.910157-154.988281-.027343-46.664063-1.753907-78.921875-36.378907-82.042969-83.121094-.269531-4.042969-1.136718-8.050782-1.726562-12.074219 0-41.382813 0-82.765625 0-124.144531zm160.953125 191.707031c23.617187 0 47.257812.707031 70.84375-.164063 36.980469-1.371093 59.726562-23.441406 60.589843-60.386718 1.070313-46.035156 1.070313-92.132813 0-138.171875-.863281-36.9375-23.625-59.523438-60.589843-60.308594-46.917969-.992187-93.886719-.984375-140.804688 0-36.683593.769531-59.496093 22.898437-60.492187 59.429687-1.265625 46.617188-1.265625 93.316407 0 139.933594.996094 36.527344 23.808594 58.144532 60.496094 59.503906 23.289062.867188 46.636718.164063 69.957031.164063zm0 0"/><path d="m256 173.996094c-45.289062 0-82.007812 36.714844-82.007812 82.003906 0 45.292969 36.71875 82.007812 82.007812 82.007812 45.292969 0 82.007812-36.714843 82.007812-82.007812 0-45.289062-36.714843-82.003906-82.007812-82.003906zm0 135.777344c-29.699219 0-53.773438-24.074219-53.773438-53.773438s24.074219-53.773438 53.773438-53.773438 53.773438 24.074219 53.773438 53.773438-24.074219 53.773438-53.773438 53.773438zm0 0"/><path d="m362.304688 170.253906c0 10.773438-8.734376 19.507813-19.507813 19.507813s-19.511719-8.734375-19.511719-19.507813c0-10.777344 8.738282-19.511718 19.511719-19.511718s19.507813 8.734374 19.507813 19.511718zm0 0"/></g></svg>
+        <p></p>
+<!--        계정 하나-->
+        <div class="socialAccountBox2 yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.instagram.com/deiscreme/?igshid=c5vgbxmnr29u')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fwww.instagram.com%2Fstatic%2Fimages%2Fico%2Ffavicon.ico%2F36b3ee2d91ed.ico&type=f30_30_expire24">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">deiscreme</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+            그림도용x do not use my artwork without permission<br>
+✍🏻painter/illustrator<br>
+📱contact for commission<br>
+->christinejay98@gmail.com / dm✉️<br>
+        </p>
+        </div>
+
+
+    <!--        계정 하나-->
+        <div class="socialAccountBox2 yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.instagram.com/hyovely_91/?igshid=sm8atbkbusey')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fwww.instagram.com%2Fstatic%2Fimages%2Fico%2Ffavicon.ico%2F36b3ee2d91ed.ico&type=f30_30_expire24">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">hyovely_91</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+시현 施炫 (sihyun.park)<br>
+📍작업문의 : 메일 [초상화주문x]<br>
+📖 [ My Book ]<br>
+• 나의첫수채화컬러링북 • 소녀의 화원<br>
+• 用水彩描繪甜美日常 • 하루한장엽서수채화<br>
+✍🏻 인물 드로잉 온라인 클래스 👇🏻<br>
+hobbyful.co.kr/product/Digital_portrait_drawing_class<br>
+        </p>
+        </div>
+
+
+        <!--        계정 하나-->
+        <div class="socialAccountBox2 yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.instagram.com/hyovely_91/?igshid=sm8atbkbusey')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fwww.instagram.com%2Fstatic%2Fimages%2Fico%2Ffavicon.ico%2F36b3ee2d91ed.ico&type=f30_30_expire24">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">love_your_c0lor</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+에스텔 드로잉 Estel.drawing<br>
+💜초상화 커미션 OPEN 💜<br>
+contact : 카카오톡<br>
+open.kakao.com/o/sMA8KVEc<br>
+        </p>
+        </div>
+
+
+<!--계정 추천 버튼-->
+        <div style="width:20%; display: inline-table;">
+            <svg onclick="location.href='accountform'" style="cursor: pointer;" fill="#404040" height="30" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm112 277.332031h-90.667969v90.667969c0 11.777344-9.554687 21.332031-21.332031 21.332031s-21.332031-9.554687-21.332031-21.332031v-90.667969h-90.667969c-11.777344 0-21.332031-9.554687-21.332031-21.332031s9.554687-21.332031 21.332031-21.332031h90.667969v-90.667969c0-11.777344 9.554687-21.332031 21.332031-21.332031s21.332031 9.554687 21.332031 21.332031v90.667969h90.667969c11.777344 0 21.332031 9.554687 21.332031 21.332031s-9.554687 21.332031-21.332031 21.332031zm0 0"/></svg>
+            <a style="display: table-cell; vertical-align: middle; font-size:12px;">관심 유튜브를 추가하세요!</a>
+        </div>
+    </div>
     <p></p>
-    <div style="width:100%">
-    <div style="width:20%; display:inline-block;">
-    <a class="insta" href="https://www.instagram.com/drawing_darang/" tabindex="-1" >
-        <img alt="drawing_darang님의 프로필 사진" class="insta-size" data-testid="user-avatar" draggable="false" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/88932208_242865073395162_5227427772820881408_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=xbmCwFCNuDIAX9FJd-m&amp;oh=3893a58c4314243d0e032b5b5ebd580b&amp;oe=5F833EAD">
-        <a class="subhead">drawing_darang</a>
-    </a>
-        <p>이런점이 조아</p>
-    </div>
-        <div style="width:20%; display:inline-block;">
-    <a class="insta" href="https://www.instagram.com/drawing_darang/" tabindex="-1" >
-        <img alt="drawing_darang님의 프로필 사진" class="insta-size" data-testid="user-avatar" draggable="false" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/88932208_242865073395162_5227427772820881408_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=xbmCwFCNuDIAX9FJd-m&amp;oh=3893a58c4314243d0e032b5b5ebd580b&amp;oe=5F833EAD">
-        <a class="subhead">drawing_darang</a>
-    </a>
-        <p>이런점이 조아</p>
-    </div>
-
-    </div>
 
 
 
+
+
+
+
+
+    <p></p>
     <button style="width: 15%;" class="categorybutton">파스텔 / 오일파스텔</button>
+    <button class="socialAccountButton" onclick="document.getElementById('art02').style.display=(document.getElementById('art02').style.display=='block') ? 'none' : 'block';">
+        >
+    </button>
     <p></p>
+
+
     <!--유튜브-->
-    <svg height="3%" viewBox="0 -77 512.00213 512" width="3%" xmlns="http://www.w3.org/2000/svg"><path d="m501.453125 56.09375c-5.902344-21.933594-23.195313-39.222656-45.125-45.128906-40.066406-10.964844-200.332031-10.964844-200.332031-10.964844s-160.261719 0-200.328125 10.546875c-21.507813 5.902344-39.222657 23.617187-45.125 45.546875-10.542969 40.0625-10.542969 123.148438-10.542969 123.148438s0 83.503906 10.542969 123.148437c5.90625 21.929687 23.195312 39.222656 45.128906 45.128906 40.484375 10.964844 200.328125 10.964844 200.328125 10.964844s160.261719 0 200.328125-10.546875c21.933594-5.902344 39.222656-23.195312 45.128906-45.125 10.542969-40.066406 10.542969-123.148438 10.542969-123.148438s.421875-83.507812-10.546875-123.570312zm0 0" fill="#f00"/><path d="m204.96875 256 133.269531-76.757812-133.269531-76.757813zm0 0" fill="#fff"/></svg></p>
     <p></p>
-    <div style="width:100%">
-    <div style="width:20%; display:inline-block;">
-    <a class="yt-simple-endpoint style-scope ytd-video-owner-renderer" tabindex="-1" href="https://m.youtube.com/channel/UCwqPe-wwzevhN32FkxeguXA"><yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
-    <img id="img" class="style-scope yt-img-shadow" alt="" width="48" src="https://yt3.ggpht.com/a/AATXAJzv-V75JNkjNfOkEMO2LclSiWlnhoghaZw3ThYvGM4=s176-c-k-c0xffffffff-no-rj-mo"></yt-img-shadow></a>
-    <h4 style="display:inline-block;">sᴛᴇʟʟᴀ ғɪʟᴍ</h4>
-    <p>이런점이 조아</p>
+    <div style="width:100%; display: none;" id="art02">
+
+
+    <!--        계정 하나-->
+
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.youtube.com/channel/UCU5LQtKXL7v2a2ohly83vGw')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/ytc/AAUvwnhX8VN0AevzIT3nly0p8NdSVdyCxit5Y7YYDMfo9iU=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">골드손Goldson</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+안녕하세요 골드손입니다 그림과 관련된 다양한 영상을 만들고 있어요<br>
+수채화, 오일파스텔, 과슈, 마카펜, 실크스크린, 스탬프 만들기 등등 다양한 활동을 하고있습니다.<br>
+더 좋은 정보를 드리기 위해 열심히 하고있으니 많이 구독해 주세요^^<br>
+<br>
+Instagram / @goldson183<br>
+Mail / sonjin1746@naver.com<br>
+        </p>
+        </div>
+
+
+        <!--        계정 하나-->
+
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.youtube.com/channel/UCBtXoWlGwVfv5aAmvfthqIQ/about')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/ytc/AAUvwni5n40i9P7J7iPyb1ANle9YY-VAb2KYBNlEwsVK=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">도톨언니TV</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+취미미술을 즐기는 분들을 위한 채널입니다<br>
+기초부터 심화, 다양한 분야의 미술과 그림을 즐기실 수 있고,<br>
+집에서도 혼자 따라 해보실 수 있어요~!<br>
+이외에도 각종 취미생활 함께 즐겨보아요:-)<br>
+You Only Live Once!<br>
+        </p>
+        </div>
+
+
+
+        <!--        계정 하나-->
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.youtube.com/c/ESARANG')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/a/AATXAJz6sqpY_aW8okvSga4Cq0aHRsCzObM6ieVr_au5=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">이사랑 E_SARANG</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+Hi.  I'm SARANG.<br>
+Nice to meet you on YouTube ☺️🙏<br>
+<br>
+<br>
+e.sarang.art@gmail.com<br>
+        </p>
+        </div>
+
+
+ <!--인스타-->
+        <p></p>
+<!--        계정 하나-->
+        <div class="socialAccountBox2 yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.instagram.com/cg_vely/?igshid=v9lcyblsq6oz')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fwww.instagram.com%2Fstatic%2Fimages%2Fico%2Ffavicon.ico%2F36b3ee2d91ed.ico&type=f30_30_expire24">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">cg_vely</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+영이그림. YoungYi<br>
+illustrator 영이 👩🏻‍🎨<br>
+𝘠𝘰𝘶𝘯𝘨𝘠𝘪 :..｡.:*ﾟ:*:✼. ..｡✿<br>
+-<br>
+.<br>
+.<br>
+무단 상업적 이용 및 도용 / 재업로드 불가합니다.<br>
+www.youtube.com/youngyi<br>
+        </p>
+        </div>
+
+
+        <!--        계정 하나-->
+        <div class="socialAccountBox2 yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.instagram.com/cg_vely/?igshid=v9lcyblsq6oz')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fwww.instagram.com%2Fstatic%2Fimages%2Fico%2Ffavicon.ico%2F36b3ee2d91ed.ico&type=f30_30_expire24">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">cg_vely</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+영이그림. YoungYi<br>
+illustrator 영이 👩🏻‍🎨<br>
+𝘠𝘰𝘶𝘯𝘨𝘠𝘪 :..｡.:*ﾟ:*:✼. ..｡✿<br>
+-<br>
+.<br>
+.<br>
+무단 상업적 이용 및 도용 / 재업로드 불가합니다.<br>
+www.youtube.com/youngyi<br>
+        </p>
+        </div>
+
+
+        <!--        계정 하나-->
+        <div class="socialAccountBox2 yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://instagram.com/kyury_p?igshid=19ar832q7uxoj')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fwww.instagram.com%2Fstatic%2Fimages%2Fico%2Ffavicon.ico%2F36b3ee2d91ed.ico&type=f30_30_expire24">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">kyury_p</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+박규리<br>
+colored pencils, watercolors, oils, acrylics, oil pastels<br>
+프리랜서 미술선생님🙋‍♀️<br>
+색연필인물화 강의👉아름다운화실 @beautiful_life_55<br>
+문의👉 DM<br>
+        </p>
+        </div>
+
+<!--계정 추천 버튼-->
+        <div style="width:20%; display: inline-table;">
+            <svg onclick="location.href='accountform'" style="cursor: pointer;" fill="#404040" height="30" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm112 277.332031h-90.667969v90.667969c0 11.777344-9.554687 21.332031-21.332031 21.332031s-21.332031-9.554687-21.332031-21.332031v-90.667969h-90.667969c-11.777344 0-21.332031-9.554687-21.332031-21.332031s9.554687-21.332031 21.332031-21.332031h90.667969v-90.667969c0-11.777344 9.554687-21.332031 21.332031-21.332031s21.332031 9.554687 21.332031 21.332031v90.667969h90.667969c11.777344 0 21.332031 9.554687 21.332031 21.332031s-9.554687 21.332031-21.332031 21.332031zm0 0"/></svg>
+            <a style="display: table-cell; vertical-align: middle; font-size:12px;">관심 유튜브를 추가하세요!</a>
+        </div>
     </div>
-    </div>
-    <!--인스타-->
-    <svg height="3%" viewBox="0 0 512 512.00038" width="3%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><radialGradient id="a" cx="104.9571229418" cy="447.4474330468" gradientUnits="userSpaceOnUse" r="564.64588968"><stop offset="0" stop-color="#fae100"/><stop offset=".0544" stop-color="#fadc04"/><stop offset=".1167" stop-color="#fbce0e"/><stop offset=".1829" stop-color="#fcb720"/><stop offset=".2514" stop-color="#fe9838"/><stop offset=".3054" stop-color="#ff7950"/><stop offset=".4922" stop-color="#ff1c74"/><stop offset="1" stop-color="#6c1cd1"/></radialGradient><linearGradient id="b" gradientUnits="userSpaceOnUse" x1="196.3726539866" x2="-671.0159540134" y1="222.4596783332" y2="-265.4464136668"><stop offset="0" stop-color="#a1b5d8" stop-opacity="0"/><stop offset=".3094" stop-color="#90a2bd" stop-opacity=".309804"/><stop offset=".7554" stop-color="#7c8b9c" stop-opacity=".756863"/><stop offset="1" stop-color="#748290"/></linearGradient><linearGradient id="c" gradientUnits="userSpaceOnUse" x1="256.0003" x2="256.0003" y1="451.9660859688" y2="531.773969673"><stop offset="0" stop-color="#fae100" stop-opacity="0"/><stop offset=".3068" stop-color="#fca800" stop-opacity=".305882"/><stop offset=".6275" stop-color="#fe7300" stop-opacity=".627451"/><stop offset=".8685" stop-color="#ff5200" stop-opacity=".866667"/><stop offset="1" stop-color="#ff4500"/></linearGradient><linearGradient id="d"><stop offset="0" stop-color="#833ab4" stop-opacity="0"/><stop offset="1" stop-color="#833ab4"/></linearGradient><linearGradient id="e" gradientUnits="userSpaceOnUse" x1="226.8724066998" x2="100.1606848024" xlink:href="#d" y1="226.147987369" y2="99.4361650794"/><linearGradient id="f" gradientUnits="userSpaceOnUse" x1="350.899540777" x2="287.6555669352" xlink:href="#d" y1="468.287448276" y2="170.1375727138"/><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="374.965057" x2="120.9410670648" xlink:href="#d" y1="374.9649673922" y2="120.9408770648"/><linearGradient id="h" gradientUnits="userSpaceOnUse" x1="393.806665096" x2="309.8058007666" xlink:href="#d" y1="221.2631037014" y2="137.2623397642"/><linearGradient id="i" gradientUnits="userSpaceOnUse" x1="357.6582448576" x2="150.5426107646" y1="155.0495285836" y2="362.1651626766"><stop offset="0" stop-color="#833ab4"/><stop offset=".0922" stop-color="#9c3495"/><stop offset=".2927" stop-color="#dc2546"/><stop offset=".392" stop-color="#fd1d1d"/><stop offset=".5589" stop-color="#fc6831"/><stop offset=".6887" stop-color="#fc9b40"/><stop offset=".7521" stop-color="#fcaf45"/><stop offset=".7806" stop-color="#fdb750"/><stop offset=".8656" stop-color="#fecb6a"/><stop offset=".9415" stop-color="#ffd87a"/><stop offset="1" stop-color="#ffdc80"/></linearGradient><path d="m503.234375 91.578125c-4.660156-43.664063-39.144531-78.15625-82.8125-82.8125-109.507813-11.6875-219.335937-11.6875-328.839844 0-43.667969 4.660156-78.15625 39.148437-82.816406 82.8125-11.6875 109.503906-11.6875 219.335937 0 328.839844 4.660156 43.667969 39.148437 78.15625 82.8125 82.816406 109.503906 11.6875 219.335937 11.6875 328.84375 0 43.667969-4.660156 78.152344-39.148437 82.8125-82.816406 11.6875-109.503907 11.6875-219.332031 0-328.839844zm0 0" fill="url(#a)"/><path d="m475.386719 110.097656c-4.132813-38.746094-34.734375-69.351562-73.484375-73.488281-97.171875-10.367187-194.632813-10.367187-291.804688 0-38.746094 4.136719-69.351562 34.742187-73.488281 73.488281-10.367187 97.171875-10.367187 194.632813 0 291.800782 4.136719 38.75 34.742187 69.355468 73.488281 73.488281 97.171875 10.371093 194.632813 10.371093 291.800782 0 38.75-4.132813 69.355468-34.738281 73.488281-73.488281 10.371093-97.167969 10.371093-194.628907 0-291.800782zm0 0" fill="url(#b)"/><path d="m7.671875 409.804688c.351563 3.539062.714844 7.078124 1.09375 10.617187 4.660156 43.664063 39.148437 78.152344 82.816406 82.8125 109.503907 11.6875 219.335938 11.6875 328.839844 0 43.667969-4.660156 78.152344-39.148437 82.8125-82.8125.378906-3.539063.742187-7.078125 1.097656-10.617187zm0 0" fill="url(#c)"/><path d="m503.234375 420.417969c6.28125-58.839844 9.179687-117.773438 8.710937-176.699219l-117.03125-117.03125c-14.621093-16.691406-35.976562-27.109375-61.070312-28.011719-51.605469-1.859375-103.375-1.765625-154.988281.007813-42.867188 1.476562-72.84375 30.289062-80.53125 72.636718-1.355469 7.476563-2.167969 15.050782-3.234375 22.582032v124.148437c.589844 4.023438 1.457031 8.027344 1.726562 12.074219 1.71875 25.757812 12.304688 47.820312 29.253906 62.746094l119.09375 119.089844c58.445313.410156 116.894532-2.496094 175.257813-8.726563 43.667969-4.660156 78.152344-39.148437 82.8125-82.816406zm0 0" fill="url(#e)"/><path d="m503.234375 420.421875c-4.65625 43.660156-39.152344 78.15625-82.8125 82.8125-58.355469 6.226563-116.816406 9.136719-175.253906 8.726563l-118.914063-118.914063c13.785156 12.066406 31.753906 19.414063 52.605469 20.199219 51.601563 1.9375 103.382813 1.886718 154.984375.027344 46.671875-1.6875 80.445312-36.230469 81.902344-82.902344 1.554687-49.554688 1.554687-99.238282 0-148.792969-.664063-21.53125-8.222656-40.476563-20.753906-54.8125l116.957031 116.957031c.460937 58.917969-2.4375 117.859375-8.714844 176.699219zm0 0" fill="url(#f)"/><path d="m316.414062 200.558594c-14.992187-16.324219-36.503906-26.566406-60.414062-26.566406-45.289062 0-82.007812 36.71875-82.007812 82.007812 0 23.910156 10.242187 45.421875 26.566406 60.414062l189.738281 189.738282c10.042969-.875 20.085937-1.847656 30.121094-2.917969 43.667969-4.660156 78.15625-39.148437 82.816406-82.816406 1.070313-10.035157 2.042969-20.078125 2.917969-30.121094zm0 0" fill="url(#g)"/><path d="m511.007812 311.152344-152.703124-152.699219c-3.5625-4.675781-9.175782-7.710937-15.507813-7.710937-10.773437 0-19.511719 8.734374-19.511719 19.511718 0 6.332032 3.035156 11.945313 7.710938 15.507813l177.28125 177.285156c1.203125-17.292969 2.113281-34.59375 2.730468-51.894531zm0 0" fill="url(#h)"/><path d="m95.089844 193.902344c1.066406-7.53125 1.878906-15.105469 3.234375-22.582032 7.683593-42.347656 37.664062-71.160156 80.53125-72.636718 51.613281-1.773438 103.382812-1.867188 154.988281-.007813 46.65625 1.679688 80.445312 36.226563 81.902344 82.898438 1.550781 49.558593 1.550781 99.238281 0 148.796875-1.457032 46.671875-35.234375 81.214844-81.898438 82.898437-51.605468 1.863281-103.386718 1.910157-154.988281-.027343-46.664063-1.753907-78.921875-36.378907-82.042969-83.121094-.269531-4.042969-1.136718-8.050782-1.726562-12.074219 0-41.382813 0-82.765625 0-124.144531zm160.953125 191.707031c23.617187 0 47.257812.707031 70.84375-.164063 36.980469-1.371093 59.726562-23.441406 60.589843-60.386718 1.070313-46.035156 1.070313-92.132813 0-138.171875-.863281-36.9375-23.625-59.523438-60.589843-60.308594-46.917969-.992187-93.886719-.984375-140.804688 0-36.683593.769531-59.496093 22.898437-60.492187 59.429687-1.265625 46.617188-1.265625 93.316407 0 139.933594.996094 36.527344 23.808594 58.144532 60.496094 59.503906 23.289062.867188 46.636718.164063 69.957031.164063zm0 0" fill="url(#i)"/><g fill="#fff"><path d="m95.089844 193.902344c1.066406-7.53125 1.878906-15.105469 3.234375-22.582032 7.683593-42.347656 37.664062-71.160156 80.53125-72.636718 51.613281-1.773438 103.382812-1.867188 154.988281-.007813 46.65625 1.679688 80.445312 36.226563 81.902344 82.898438 1.550781 49.558593 1.550781 99.238281 0 148.796875-1.457032 46.671875-35.234375 81.214844-81.898438 82.898437-51.605468 1.863281-103.386718 1.910157-154.988281-.027343-46.664063-1.753907-78.921875-36.378907-82.042969-83.121094-.269531-4.042969-1.136718-8.050782-1.726562-12.074219 0-41.382813 0-82.765625 0-124.144531zm160.953125 191.707031c23.617187 0 47.257812.707031 70.84375-.164063 36.980469-1.371093 59.726562-23.441406 60.589843-60.386718 1.070313-46.035156 1.070313-92.132813 0-138.171875-.863281-36.9375-23.625-59.523438-60.589843-60.308594-46.917969-.992187-93.886719-.984375-140.804688 0-36.683593.769531-59.496093 22.898437-60.492187 59.429687-1.265625 46.617188-1.265625 93.316407 0 139.933594.996094 36.527344 23.808594 58.144532 60.496094 59.503906 23.289062.867188 46.636718.164063 69.957031.164063zm0 0"/><path d="m256 173.996094c-45.289062 0-82.007812 36.714844-82.007812 82.003906 0 45.292969 36.71875 82.007812 82.007812 82.007812 45.292969 0 82.007812-36.714843 82.007812-82.007812 0-45.289062-36.714843-82.003906-82.007812-82.003906zm0 135.777344c-29.699219 0-53.773438-24.074219-53.773438-53.773438s24.074219-53.773438 53.773438-53.773438 53.773438 24.074219 53.773438 53.773438-24.074219 53.773438-53.773438 53.773438zm0 0"/><path d="m362.304688 170.253906c0 10.773438-8.734376 19.507813-19.507813 19.507813s-19.511719-8.734375-19.511719-19.507813c0-10.777344 8.738282-19.511718 19.511719-19.511718s19.507813 8.734374 19.507813 19.511718zm0 0"/></g></svg>
     <p></p>
-    <div style="width:100%">
-    <div style="width:20%; display:inline-block;">
-    <a class="insta" href="https://www.instagram.com/drawing_darang/" tabindex="-1" >
-        <img alt="drawing_darang님의 프로필 사진" class="insta-size" data-testid="user-avatar" draggable="false" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/88932208_242865073395162_5227427772820881408_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=xbmCwFCNuDIAX9FJd-m&amp;oh=3893a58c4314243d0e032b5b5ebd580b&amp;oe=5F833EAD">
-        <a class="subhead">drawing_darang</a>
-    </a>
-        <p>이런점이 조아</p>
-    </div>
-    </div>
+
+
+
 
 
 
     <button style="width: 15%;" class="categorybutton">캘리그래피</button>
+    <button class="socialAccountButton" onclick="document.getElementById('art03').style.display=(document.getElementById('art03').style.display=='block') ? 'none' : 'block';">
+        >
+    </button>
     <p></p>
-    <!--유튜브-->
-    <svg height="3%" viewBox="0 -77 512.00213 512" width="3%" xmlns="http://www.w3.org/2000/svg"><path d="m501.453125 56.09375c-5.902344-21.933594-23.195313-39.222656-45.125-45.128906-40.066406-10.964844-200.332031-10.964844-200.332031-10.964844s-160.261719 0-200.328125 10.546875c-21.507813 5.902344-39.222657 23.617187-45.125 45.546875-10.542969 40.0625-10.542969 123.148438-10.542969 123.148438s0 83.503906 10.542969 123.148437c5.90625 21.929687 23.195312 39.222656 45.128906 45.128906 40.484375 10.964844 200.328125 10.964844 200.328125 10.964844s160.261719 0 200.328125-10.546875c21.933594-5.902344 39.222656-23.195312 45.128906-45.125 10.542969-40.066406 10.542969-123.148438 10.542969-123.148438s.421875-83.507812-10.546875-123.570312zm0 0" fill="#f00"/><path d="m204.96875 256 133.269531-76.757812-133.269531-76.757813zm0 0" fill="#fff"/></svg></p>
+
+<!--유튜브-->
     <p></p>
-    <div style="width:100%">
-    <div style="width:20%; display:inline-block;">
-    <a class="yt-simple-endpoint style-scope ytd-video-owner-renderer" tabindex="-1" href="https://m.youtube.com/channel/UCwqPe-wwzevhN32FkxeguXA"><yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
-    <img id="img" class="style-scope yt-img-shadow" alt="" width="48" src="https://yt3.ggpht.com/a/AATXAJzv-V75JNkjNfOkEMO2LclSiWlnhoghaZw3ThYvGM4=s176-c-k-c0xffffffff-no-rj-mo"></yt-img-shadow></a>
-    <h4 style="display:inline-block;">sᴛᴇʟʟᴀ ғɪʟᴍ</h4>
-    <p>이런점이 조아</p>
+    <div style="width:100%; display: none;" id="art03">
+
+
+    <!--        계정 하나-->
+
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.youtube.com/channel/UCpzy7mkDzesiA9zp60BvlFg')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/ytc/AAUvwnioZL0zWAVRcYtzDyOa7ffarBdiOSfcH0gt0fCQ=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">함께하는 동행캘리</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+캘리그라피기초강좌.손그림.인테리어DIY 관련 채널입니다<br>
+<br>
+캘리그라피 독학 아직도 고민하세요<br>
+동행캘리와 함께 생활 속에서 할 수 있는 캘리그라피 같이 해보세요<br>
+기초강좌. 활용. DIY까지 소소한 행복을 준비 해 드립니다<br>
+<br>
+<br>
+NAVER Blog<br>
+https://www.blog.naver.com/eunji3263<br>
+<br>
+NAVER grafolio<br>
+https://www.grafolio.com/Donghaeng<br>
+<br>
+인스타그램<br>
+https://www.instagram.com/company_calli<br>
+        </p>
+        </div>
+
+
+        <!--        계정 하나-->
+
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.youtube.com/c/이영온에어')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/ytc/AAUvwng6aH-tP8bCDYZ09VLgXGhVDlvRjtzeCA5urHvY=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">이영온에어</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+누구나 쉽게 쓸 수 있도록<br><Br>
+        </p>
+        </div>
+
+
+        <!--        계정 하나-->
+
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.youtube.com/channel/UCHn6JKeMMvtX6oQkTbh0ZtQ')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/ytc/AAUvwnidKjaJIf2U2Pf2MSJJtc88x2HcsLL0e0T1bL-8=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">글샘처리</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+캘리그라피 아티스트 글샘처리와 함께 놀기~~
+        </p>
+        </div>
+
+
+
+<!--인스타-->
+        <p></p>
+<!--        계정 하나-->
+        <div class="socialAccountBox2 yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://instagram.com/kanggrim?igshid=a25sbwimytz5')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fwww.instagram.com%2Fstatic%2Fimages%2Fico%2Ffavicon.ico%2F36b3ee2d91ed.ico&type=f30_30_expire24">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">kanggrim</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+강그림 캘리그라피<br>
+Seoul, Korea<br>
+▪️Calligraphy | Drawing | Design | Class<br>
+문의는 DM 또는 카카오톡<br>
+👇강그림 링크<br>
+instabio.cc/kanggrim<br>
+        </p>
+        </div>
+
+
+        <!--        계정 하나-->
+        <div class="socialAccountBox2 yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://instagram.com/calli_soon?igshid=1qdn0ymaly81m')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fwww.instagram.com%2Fstatic%2Fimages%2Fico%2Ffavicon.ico%2F36b3ee2d91ed.ico&type=f30_30_expire24">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">calli_soon</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+박헌순-순글씨✏말씀캘리<br>
+말씀으로 삶을 위로하는 캘리그라퍼 '순글씨'입니다.<br>
+2020년도는 &lt;책한줄캘리&gt;&lt;시편캘리&gt;&lt;산상수훈캘리&gt;를 업로드합니다.<br>
+#순글씨 #캘리그라피 #말씀캘리 #찬양캘리<br>
+(산상수훈.시편)캘리이미지다운로드 👇👇👇👇<br>
+drive.google.com/drive/folders/19akp5u0P3Na9Z2JS3_Wq7idPHiGrzx46?usp=sharing<br>
+        </p>
+        </div>
+
+
+        <!--        계정 하나-->
+        <div class="socialAccountBox2 yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://www.instagram.com/sumbi_calli/?igshid=4grtejek6bao')"
+        title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fwww.instagram.com%2Fstatic%2Fimages%2Fico%2Ffavicon.ico%2F36b3ee2d91ed.ico&type=f30_30_expire24">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">sumbi_calli</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+숨비캘리그라피<br>
+캘리그라피 / 북. 편집. 시각디자인<br>
+사)KCDC 1급 지도사/작가<br>
+경찰청주최 캘리그라피공모전 최우수<br>
+이산글씨학교소속 / 동아리_펜타스틱, 글씨비행<br>
+글과글씨전_나태주작가,저마다의글이있다 참여<br>
+        </p>
+        </div>
+
+<!--계정 추천 버튼-->
+        <div style="width:20%; display: inline-table;">
+            <svg onclick="location.href='accountform'" style="cursor: pointer;" fill="#404040" height="30" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm112 277.332031h-90.667969v90.667969c0 11.777344-9.554687 21.332031-21.332031 21.332031s-21.332031-9.554687-21.332031-21.332031v-90.667969h-90.667969c-11.777344 0-21.332031-9.554687-21.332031-21.332031s9.554687-21.332031 21.332031-21.332031h90.667969v-90.667969c0-11.777344 9.554687-21.332031 21.332031-21.332031s21.332031 9.554687 21.332031 21.332031v90.667969h90.667969c11.777344 0 21.332031 9.554687 21.332031 21.332031s-9.554687 21.332031-21.332031 21.332031zm0 0"/></svg>
+            <a style="display: table-cell; vertical-align: middle; font-size:12px;">관심 유튜브를 추가하세요!</a>
+        </div>
     </div>
-    </div>
-    <!--인스타-->
-    <svg height="3%" viewBox="0 0 512 512.00038" width="3%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><radialGradient id="a" cx="104.9571229418" cy="447.4474330468" gradientUnits="userSpaceOnUse" r="564.64588968"><stop offset="0" stop-color="#fae100"/><stop offset=".0544" stop-color="#fadc04"/><stop offset=".1167" stop-color="#fbce0e"/><stop offset=".1829" stop-color="#fcb720"/><stop offset=".2514" stop-color="#fe9838"/><stop offset=".3054" stop-color="#ff7950"/><stop offset=".4922" stop-color="#ff1c74"/><stop offset="1" stop-color="#6c1cd1"/></radialGradient><linearGradient id="b" gradientUnits="userSpaceOnUse" x1="196.3726539866" x2="-671.0159540134" y1="222.4596783332" y2="-265.4464136668"><stop offset="0" stop-color="#a1b5d8" stop-opacity="0"/><stop offset=".3094" stop-color="#90a2bd" stop-opacity=".309804"/><stop offset=".7554" stop-color="#7c8b9c" stop-opacity=".756863"/><stop offset="1" stop-color="#748290"/></linearGradient><linearGradient id="c" gradientUnits="userSpaceOnUse" x1="256.0003" x2="256.0003" y1="451.9660859688" y2="531.773969673"><stop offset="0" stop-color="#fae100" stop-opacity="0"/><stop offset=".3068" stop-color="#fca800" stop-opacity=".305882"/><stop offset=".6275" stop-color="#fe7300" stop-opacity=".627451"/><stop offset=".8685" stop-color="#ff5200" stop-opacity=".866667"/><stop offset="1" stop-color="#ff4500"/></linearGradient><linearGradient id="d"><stop offset="0" stop-color="#833ab4" stop-opacity="0"/><stop offset="1" stop-color="#833ab4"/></linearGradient><linearGradient id="e" gradientUnits="userSpaceOnUse" x1="226.8724066998" x2="100.1606848024" xlink:href="#d" y1="226.147987369" y2="99.4361650794"/><linearGradient id="f" gradientUnits="userSpaceOnUse" x1="350.899540777" x2="287.6555669352" xlink:href="#d" y1="468.287448276" y2="170.1375727138"/><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="374.965057" x2="120.9410670648" xlink:href="#d" y1="374.9649673922" y2="120.9408770648"/><linearGradient id="h" gradientUnits="userSpaceOnUse" x1="393.806665096" x2="309.8058007666" xlink:href="#d" y1="221.2631037014" y2="137.2623397642"/><linearGradient id="i" gradientUnits="userSpaceOnUse" x1="357.6582448576" x2="150.5426107646" y1="155.0495285836" y2="362.1651626766"><stop offset="0" stop-color="#833ab4"/><stop offset=".0922" stop-color="#9c3495"/><stop offset=".2927" stop-color="#dc2546"/><stop offset=".392" stop-color="#fd1d1d"/><stop offset=".5589" stop-color="#fc6831"/><stop offset=".6887" stop-color="#fc9b40"/><stop offset=".7521" stop-color="#fcaf45"/><stop offset=".7806" stop-color="#fdb750"/><stop offset=".8656" stop-color="#fecb6a"/><stop offset=".9415" stop-color="#ffd87a"/><stop offset="1" stop-color="#ffdc80"/></linearGradient><path d="m503.234375 91.578125c-4.660156-43.664063-39.144531-78.15625-82.8125-82.8125-109.507813-11.6875-219.335937-11.6875-328.839844 0-43.667969 4.660156-78.15625 39.148437-82.816406 82.8125-11.6875 109.503906-11.6875 219.335937 0 328.839844 4.660156 43.667969 39.148437 78.15625 82.8125 82.816406 109.503906 11.6875 219.335937 11.6875 328.84375 0 43.667969-4.660156 78.152344-39.148437 82.8125-82.816406 11.6875-109.503907 11.6875-219.332031 0-328.839844zm0 0" fill="url(#a)"/><path d="m475.386719 110.097656c-4.132813-38.746094-34.734375-69.351562-73.484375-73.488281-97.171875-10.367187-194.632813-10.367187-291.804688 0-38.746094 4.136719-69.351562 34.742187-73.488281 73.488281-10.367187 97.171875-10.367187 194.632813 0 291.800782 4.136719 38.75 34.742187 69.355468 73.488281 73.488281 97.171875 10.371093 194.632813 10.371093 291.800782 0 38.75-4.132813 69.355468-34.738281 73.488281-73.488281 10.371093-97.167969 10.371093-194.628907 0-291.800782zm0 0" fill="url(#b)"/><path d="m7.671875 409.804688c.351563 3.539062.714844 7.078124 1.09375 10.617187 4.660156 43.664063 39.148437 78.152344 82.816406 82.8125 109.503907 11.6875 219.335938 11.6875 328.839844 0 43.667969-4.660156 78.152344-39.148437 82.8125-82.8125.378906-3.539063.742187-7.078125 1.097656-10.617187zm0 0" fill="url(#c)"/><path d="m503.234375 420.417969c6.28125-58.839844 9.179687-117.773438 8.710937-176.699219l-117.03125-117.03125c-14.621093-16.691406-35.976562-27.109375-61.070312-28.011719-51.605469-1.859375-103.375-1.765625-154.988281.007813-42.867188 1.476562-72.84375 30.289062-80.53125 72.636718-1.355469 7.476563-2.167969 15.050782-3.234375 22.582032v124.148437c.589844 4.023438 1.457031 8.027344 1.726562 12.074219 1.71875 25.757812 12.304688 47.820312 29.253906 62.746094l119.09375 119.089844c58.445313.410156 116.894532-2.496094 175.257813-8.726563 43.667969-4.660156 78.152344-39.148437 82.8125-82.816406zm0 0" fill="url(#e)"/><path d="m503.234375 420.421875c-4.65625 43.660156-39.152344 78.15625-82.8125 82.8125-58.355469 6.226563-116.816406 9.136719-175.253906 8.726563l-118.914063-118.914063c13.785156 12.066406 31.753906 19.414063 52.605469 20.199219 51.601563 1.9375 103.382813 1.886718 154.984375.027344 46.671875-1.6875 80.445312-36.230469 81.902344-82.902344 1.554687-49.554688 1.554687-99.238282 0-148.792969-.664063-21.53125-8.222656-40.476563-20.753906-54.8125l116.957031 116.957031c.460937 58.917969-2.4375 117.859375-8.714844 176.699219zm0 0" fill="url(#f)"/><path d="m316.414062 200.558594c-14.992187-16.324219-36.503906-26.566406-60.414062-26.566406-45.289062 0-82.007812 36.71875-82.007812 82.007812 0 23.910156 10.242187 45.421875 26.566406 60.414062l189.738281 189.738282c10.042969-.875 20.085937-1.847656 30.121094-2.917969 43.667969-4.660156 78.15625-39.148437 82.816406-82.816406 1.070313-10.035157 2.042969-20.078125 2.917969-30.121094zm0 0" fill="url(#g)"/><path d="m511.007812 311.152344-152.703124-152.699219c-3.5625-4.675781-9.175782-7.710937-15.507813-7.710937-10.773437 0-19.511719 8.734374-19.511719 19.511718 0 6.332032 3.035156 11.945313 7.710938 15.507813l177.28125 177.285156c1.203125-17.292969 2.113281-34.59375 2.730468-51.894531zm0 0" fill="url(#h)"/><path d="m95.089844 193.902344c1.066406-7.53125 1.878906-15.105469 3.234375-22.582032 7.683593-42.347656 37.664062-71.160156 80.53125-72.636718 51.613281-1.773438 103.382812-1.867188 154.988281-.007813 46.65625 1.679688 80.445312 36.226563 81.902344 82.898438 1.550781 49.558593 1.550781 99.238281 0 148.796875-1.457032 46.671875-35.234375 81.214844-81.898438 82.898437-51.605468 1.863281-103.386718 1.910157-154.988281-.027343-46.664063-1.753907-78.921875-36.378907-82.042969-83.121094-.269531-4.042969-1.136718-8.050782-1.726562-12.074219 0-41.382813 0-82.765625 0-124.144531zm160.953125 191.707031c23.617187 0 47.257812.707031 70.84375-.164063 36.980469-1.371093 59.726562-23.441406 60.589843-60.386718 1.070313-46.035156 1.070313-92.132813 0-138.171875-.863281-36.9375-23.625-59.523438-60.589843-60.308594-46.917969-.992187-93.886719-.984375-140.804688 0-36.683593.769531-59.496093 22.898437-60.492187 59.429687-1.265625 46.617188-1.265625 93.316407 0 139.933594.996094 36.527344 23.808594 58.144532 60.496094 59.503906 23.289062.867188 46.636718.164063 69.957031.164063zm0 0" fill="url(#i)"/><g fill="#fff"><path d="m95.089844 193.902344c1.066406-7.53125 1.878906-15.105469 3.234375-22.582032 7.683593-42.347656 37.664062-71.160156 80.53125-72.636718 51.613281-1.773438 103.382812-1.867188 154.988281-.007813 46.65625 1.679688 80.445312 36.226563 81.902344 82.898438 1.550781 49.558593 1.550781 99.238281 0 148.796875-1.457032 46.671875-35.234375 81.214844-81.898438 82.898437-51.605468 1.863281-103.386718 1.910157-154.988281-.027343-46.664063-1.753907-78.921875-36.378907-82.042969-83.121094-.269531-4.042969-1.136718-8.050782-1.726562-12.074219 0-41.382813 0-82.765625 0-124.144531zm160.953125 191.707031c23.617187 0 47.257812.707031 70.84375-.164063 36.980469-1.371093 59.726562-23.441406 60.589843-60.386718 1.070313-46.035156 1.070313-92.132813 0-138.171875-.863281-36.9375-23.625-59.523438-60.589843-60.308594-46.917969-.992187-93.886719-.984375-140.804688 0-36.683593.769531-59.496093 22.898437-60.492187 59.429687-1.265625 46.617188-1.265625 93.316407 0 139.933594.996094 36.527344 23.808594 58.144532 60.496094 59.503906 23.289062.867188 46.636718.164063 69.957031.164063zm0 0"/><path d="m256 173.996094c-45.289062 0-82.007812 36.714844-82.007812 82.003906 0 45.292969 36.71875 82.007812 82.007812 82.007812 45.292969 0 82.007812-36.714843 82.007812-82.007812 0-45.289062-36.714843-82.003906-82.007812-82.003906zm0 135.777344c-29.699219 0-53.773438-24.074219-53.773438-53.773438s24.074219-53.773438 53.773438-53.773438 53.773438 24.074219 53.773438 53.773438-24.074219 53.773438-53.773438 53.773438zm0 0"/><path d="m362.304688 170.253906c0 10.773438-8.734376 19.507813-19.507813 19.507813s-19.511719-8.734375-19.511719-19.507813c0-10.777344 8.738282-19.511718 19.511719-19.511718s19.507813 8.734374 19.507813 19.511718zm0 0"/></g></svg>
     <p></p>
-    <div style="width:100%">
-    <div style="width:20%; display:inline-block;">
-    <a class="insta" href="https://www.instagram.com/drawing_darang/" tabindex="-1" >
-        <img alt="drawing_darang님의 프로필 사진" class="insta-size" data-testid="user-avatar" draggable="false" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/88932208_242865073395162_5227427772820881408_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=xbmCwFCNuDIAX9FJd-m&amp;oh=3893a58c4314243d0e032b5b5ebd580b&amp;oe=5F833EAD">
-        <a class="subhead">drawing_darang</a>
-    </a>
-        <p>이런점이 조아</p>
-    </div>
-    </div>
+
+
+
 </div>
 {% endblock %}

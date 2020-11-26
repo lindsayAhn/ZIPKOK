@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for market in marketlist %}
+	{% if request.session.authUser.email == market.user.email %}
+
+<div id="market" class="slideshow-container" style="width:30%; float:left; margin:0px; margin-left:2.5%;" >
+	<table class="formcontrol" style="font-size:10px;" onclick="location.href='{% url 'market:view' market.id page %}?kwd={{kwd}}'">
+		<tr>
+			<td style="padding: 2% 0 0.5% 3%; font-size: 12px;">{{market.category}}</td>
+		</tr>
+		<tr>
+			<td class="bord_title" style="font-size:13px;"><span class="half_background">{{market.title}}</span></td>
+<!--			<td><span class="half_background">{{board.title}}</span></td>-->
+		</tr>
+		<tr>
+			<td>
+<!--				<hr size="1" color="#dadada;" style="margin-right:10px; margin-left:10px; border-color:#dadada;" >-->
+<!--				<a style="margin-left:2%; margin-right:3%;"><b style="color:#6E6CBF; font-size:13px">CATEGORY</b>  :  {{board.category}}</a>-->
+				<a style="margin-left:3%; margin-right:3%;"><b style="color:#6E6CBF; font-size:12px">DATE</b>  :  {{market.regdate|date:'Y-m-d '}} </a>
+				<a style="margin-right:3%;"><b style="color:#6E6CBF; font-size:12px">WRITER</b>  :  {{market.user.name}} </a>
+				<a><b style="color:#6E6CBF; font-size:12px">HIT</b>  :  {{market.hit}}</a>
+				<hr size="1" color="#dadada;" style="margin-right:10px; margin-left:10px; border-color:#dadada;">
+			</td>
+			<tr>
+				<td>
+					<div>
+						{% for photo in market.photo_set.all%}
+						<img src="{{photo.image.url}}" width="50" style="margin:3%; float:left;">
+						{% endfor %}
+					</div>
+					<div style="white-space: pre-line; margin:3%; font-size: 12px; min-height:100px;">{{market.content|truncatechars:100}} </div>
+
+<!--					{% if request.session.authUser.email == board.user.email %}-->
+<!--					<input type="button" value="삭제" class="btn" onclick="location.href='{% url 'board:delete' board.id page %}?kwd={{kwd}}'" style="float:right; width:6%;">-->
+<!--					<input type="button" value="수정" class="btn" onclick="location.href='{% url 'board:modifyform' board.id page %}'" style="float:right; margin-right:1%; width:6%;" >-->
+<!--					{% endif %}-->
+
+				</td>
+
+			</tr>
+		</tr>
+	</table>
+</div>
+	{% endif %}
+{% endfor %}
+{% endblock %}
+

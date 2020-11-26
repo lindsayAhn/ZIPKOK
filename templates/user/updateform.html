@@ -1,5 +1,5 @@
 {% extends '../base.html' %}
-
+{% load mathfilters %}
 {% block csslink %}
 
 <link href="/assets/css/user.css" rel="stylesheet" type="text/css">
@@ -18,8 +18,8 @@
 	<form id="join-form" name="joinForm" method="post" action="{% url 'user:update' %}">
 		{% csrf_token %}
 <!--		<img src="{{user.photo.url}}" width="100"><br>-->
-		<label class="block-label" for="name">이름</label>
-		<input id="name" name="name" type="text" value="{{ user.name }}" class="formcontrol">
+		<label class="block-label" for="name">이름</label><br>
+		<input id="name" name="name" type="text" value="{{ user.name }}" class="formcontrol" style="height:50px; width:87%; border-radius:3px; margin-top:3%;">
 
 <!--		<label class="block-label" for="email">이메일</label>-->
 		<input hidden="true" id="email" name="email" type="text" value="{{ user.email }}" class="formcontrol">
@@ -27,11 +27,22 @@
 <!--		<label class="block-label">패스워드 변경</label>-->
 		<input hidden="true" name="password" type="password" value="" class="formcontrol">
 
-
-		<input type="submit" value="수정하기" class="btn2">
-
+		<input type="submit" value="수정하기" class="btn2" style="height:50px; width:10%; border-radius:3px; margin-top:3%; font-size: 15px; background:rgba(110, 108, 191, 0.9);">
+<hr size="1" color="#dadada;" style="border-color:#dadada; ">
 	</form>
 </div>
+	<div style="margin-top:2%;">
+		<div style="font-weight:bold; font-size:12px;">Community</div>
+		<img src="/assets/images/social-media.png" onclick="location.href='{% url 'board:mylist' %}'" style="cursor:pointer;">
+		<img src="/assets/images/message.png" onclick="location.href='{% url 'board:mycomment' %}'" style="cursor:pointer; ">
+<!--		<a onclick="location.href='{% url 'board:mylist' %}'" >내가쓴글</a>-->
+	</div>
+	<br>
+	<div style="margin-top:2%;">
+		<div style="font-weight:bold; font-size:12px;">Market</div>
+		<img src="/assets/images/social-media.png" onclick="location.href='{% url 'market:mylist' %}'" style="cursor:pointer;">
+		<img src="/assets/images/message.png" onclick="location.href='{% url 'market:mycomment' %}'" style="cursor:pointer; ">
+<!--		<a onclick="location.href='{% url 'board:mylist' %}'" >내가쓴글</a>-->
+	</div>
 </div>
-
 {% endblock%}

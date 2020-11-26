@@ -6,6 +6,8 @@ from django.conf.urls.static import static
 app_name = 'board'
 
 urlpatterns = [
+    path('mylist', views.mylist, name='mylist'),
+    path('mycomment', views.mycomment, name='mycomment'),
     path('list/<int:page>', views.list, name='list'),
     path('list/', views.list, name='list'),
     path('writeform/<int:page>', views.writeform, name='writeform'),

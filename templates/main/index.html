@@ -1,115 +1,315 @@
 {% extends '../base.html' %}
 
-{% block csslink %}
-<link href="/assets/css/style.css" rel="stylesheet" type="text/css">
-{% endblock %}
+
 
 {% block content%}
-{% url 'home' as home %}
-{% if request.path == home %}
-{% endif %}
+
+{% load static %}
+<script src="/assets/js/jquery/jquery-1.9.0.js"></script>
+<script src="{% static 'js/jquery/click.js' %}" type="text/javascript"></script>
+<script type="text/javascript" src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+  $('.more').mouseenter(function(){
+    $('.word').text('더보기');
+  });
+  $('.more').mouseleave(function(){
+    $('.word').text('');
+  });
+});
+$(function(){
+  $('.more2').mouseenter(function(){
+    $('.word2').text('더보기');
+  });
+  $('.more2').mouseleave(function(){
+    $('.word2').text('');
+  });
+});
+$(function(){
+  $('.more3').mouseenter(function(){
+    $('.word3').text('더보기');
+  });
+  $('.more3').mouseleave(function(){
+    $('.word3').text('');
+  });
+});
+</script>
+
+
 <!-- youtube -->
     <div class="slideshow-container">
+<!--        <b><div id="clock" style="color:#6E6CBF; font-size:15px;"></div></b>-->
         <div class="mySlides fade">
-            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/BnuOByiB-pg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/x1_wgN9tSoo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/SiNhaz8igEw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe width="220" height="250" src="https://www.youtube.com/embed/qpUqD2ljTHM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="550" src="https://www.youtube.com/embed/rNnWaYLKWCE" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="progress-bar"></div>
         </div>
-
         <div class="mySlides fade">
-             <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/M7uOviwCHuA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/6IsCi3CW-oo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/3U1XqVi4chk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe width="220" height="250" src="https://www.youtube.com/embed/hNVyqaTPxP0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="550" src="https://www.youtube.com/embed/MIjJs6Rcdck" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="progress-bar"></div>
         </div>
-
         <div class="mySlides fade">
-            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/IsO0UF04dNQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/c-dfaA3Bt1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe style="margin-right:7.7%;" width="220" height="250" src="https://www.youtube.com/embed/4Hndt-mUMgk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe width="220" height="250" src="https://www.youtube.com/embed/FDaIt_shORA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="550" src="https://www.youtube.com/embed/Ya_8mF5R508" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="progress-bar"></div>
         </div>
-
-        <a class="prev" onclick="plusSlides(-1)"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 5.5l-6 6.5 6 6.5L14 20l-7.5-8L14 4l1.5 1.5z" fill="#1b1c1d"></path></svg></a>
-        <a class="next" onclick="plusSlides(1)"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 18.5l6-6.5-6-6.5L10 4l7.5 8-7.5 8-1.5-1.5z" fill="#1b1c1d"></path></svg></a>
+        <div class="mySlides fade">
+            <iframe width="100%" height="550" src="https://www.youtube.com/embed/qpUqD2ljTHM" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="progress-bar"></div>
+        </div>
+        <div class="mySlides fade">
+             <iframe width="100%" height="550" src="https://www.youtube.com/embed/M7uOviwCHuA" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="progress-bar"></div>
+        </div>
+        <div class="mySlides fade">
+             <iframe width="100%" height="550" src="https://www.youtube.com/embed/6IsCi3CW-oo" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="progress-bar"></div>
+        </div>
+        <div class="mySlides fade">
+             <iframe width="100%" height="550" src="https://www.youtube.com/embed/3U1XqVi4chk" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="progress-bar"></div>
+        </div>
+        <div class="mySlides fade">
+             <iframe width="100%" height="550" src="https://www.youtube.com/embed/hNVyqaTPxP0" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="progress-bar"></div>
+        </div>
+        <div class="mySlides fade">
+            <iframe width="100%" height="550" src="https://www.youtube.com/embed/IsO0UF04dNQ" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="progress-bar"></div>
+        </div>
+        <div class="mySlides fade">
+            <iframe width="100%" height="550" src="https://www.youtube.com/embed/c-dfaA3Bt1k" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="progress-bar"></div>
+        </div>
+        <div class="mySlides fade">
+            <iframe width="100%" height="550" src="https://www.youtube.com/embed/4Hndt-mUMgk" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="progress-bar"></div>
+        </div>
+        <div class="mySlides fade">
+            <iframe width="100%" height="550" src="https://www.youtube.com/embed/FDaIt_shORA" frameborder="0" allow="fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="progress-bar"></div>
+        </div>
+        <b><div id="clock" style="color:#404040; font-size:13px; margin-top:1%;"></div></b>
+        <a class="prev" onclick="plusSlides(-1)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 5.5l-6 6.5 6 6.5L14 20l-7.5-8L14 4l1.5 1.5z" fill="#6E6CBF"></path></svg></a>
+        <a id="chk" class="next" onclick="plusSlides(1)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 18.5l6-6.5-6-6.5L10 4l7.5 8-7.5 8-1.5-1.5z" fill="#6E6CBF"></path></svg></a>
     </div>
 
+<!--둘러보기 타이틀-->
+<div style="width: 100%; margin-top:40px;">
+    <div style="color:#6E6CBF; font-size:20px; font-weight: bold; margin-left:3%;">
 
+            <a class="more3 cursor" style="width:20px;height:20px;" onClick="location.href='social/art'">
+                둘러보기 추천 계정&nbsp;&nbsp;&nbsp;>
+            </a>
+            <a class="word3" style="color: #404040; font-size: 17px;">
 
+            </a>
+    </div>
+</div>
+<!--둘러보기 내용-->
 <div class="slideshow-container2">
-        <div style="width: 46.5%; position: relative; display: inline-flex">
-            <table class="tbl-ex">
-		{% for board in boardlist %}
-			<tr>
-				{% if board.depth == 0 %}
-				<td style="text-align: left;">
-					{% if board.title == '삭제된 글입니다.'%}
-<!--                    {% for photo in board.photo_set.all%}-->
-<!--    							<img src="{{photo.image.url}}" width="50"><br>-->
-<!--							{% endfor %}-->
-						{{board.title}}
-					{% else %}
-<!--
--->
-						<b><a href="{% url 'board:view' board.id page %}?kwd={{kwd}}" style="text-decoration:none; color:#404040; font-size:20px;">{{board.title}}</a></b>
-					{% endif %}
-				</td>
-            </tr>
+    <div style="width: 100%; margin-left:1%;">
+        <!--        계정 하나-->
+
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://m.youtube.com/channel/UCrBpV_pG2kyMMEHCMTNzjAQ')" title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/ytc/AAUvwnjQFN_oeyGOiSVJPGlsXczIK85XoV3wUvCi0ihAFQ=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">리뷰엉이: Owl's Review</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+설명영화 보고 나왔는데 정말 이해가 안 가는 것들 해설한다 부엉.<Br>
+영화를 더 재밌게 볼 수 있게 도와준다 부엉.<Br>
+영화에 대한 생각을 나누는 것도 환영한다 부엉.<Br>
+영화 해설, 영화 리뷰<Br>
+영화 뒤풀이 리뷰엉이<Br>
+<Br>
+비즈니스 문의 - dl_owlsreview@semicolonstudio.com<Br>
+        </p>
+        </div>
 
 
-		{% else %}
-                <tr>
-                <td style="text-align: left;">
-				{% if board.title == '삭제된 글입니다.'%}
-<!--{% for photo in board.photo_set.all%}-->
-<!--    							<img src="{{photo.image.url}}" width="50"><br>-->
-<!--							{% endfor %}-->
-					{{board.title}}
-					{% else %}
-					<b><a href="{% url 'board:view' board.id page %}?kwd={{kwd}}" style="text-decoration:none; color:#404040;">{{board.title}}</a></b>
-					{% endif %}
-				</td>
-		{% endif %}
+        <!--        계정 하나-->
+<div class="socialAccountBox2 yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://instagram.com/kkangstar777?igshid=tdzoow4bzibb')" title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fwww.instagram.com%2Fstatic%2Fimages%2Fico%2Ffavicon.ico%2F36b3ee2d91ed.ico&type=f30_30_expire24">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">kkangstar777</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+happyfamily_s.y.s.d<br>
+🔺️행복한가족👨‍👩‍👧‍👦 기록•매매일지•성실하게•초심지키며!<br>
+😊 '벼는 익을수록 고개를 숙인다'20200812'간절함'<br>
+🌶_상승은빠르다_다된다! 다할수있다!열심히공부🌻<br>
+📈#주식#주식투자#주식성공투자#주식공부#주식스타그램#스캘핑#스캘퍼#단타#스윙#종베#시황#데이트레이딩<br>
+        </p>
+        </div>
+
+        <!--        계정 하나-->
+
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://m.youtube.com/channel/UCaHGOzOyeYzLQeKsVkfLEGA')" title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/ytc/AAUvwnjh5wMWH4haDGkaP0en7oK_MBUFIfVVdmwk-4Tl_g=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">지무비 : G Movie </h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+설명G리는 영화&드라마 리뷰&프리뷰채널, 지무비 : G Movie <Br>
+매주 토요일 오후 1시 업로드<Br>
+<Br>
+[지무비 공식 인스타그램] <Br>
+https://www.instagram.com/G_movie__/<Br>
+[지무비 개인 인스타그램] <Br>
+https://www.instagram.com/awayout1/<Br>
+[지무비 페이스북] <Br>
+https://www.facebook.com/pg/Gmoviee<Br>
+[팬 사서함]<Br>
+서울특별시 강남구 테헤란로 518 15층 샌드박스 네트워크 <Br>
+받는 사람명 - 지무비<Br>
+[문의 이메일] <Br>
+awayout2@naver.com<Br>
+        </p>
+        </div>
+
+
+        <!--        계정 하나-->
+
+        <div class="socialAccountBox yt-simple-endpoint style-scope ytd-video-owner-renderer cursor" tabindex="-1" onclick="window.open('https://m.youtube.com/user/rladndgussla')" title="">
+            <yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" loaded="" style="background-color: transparent;"><!--css-build:shady-->
+            <img id="img" class="style-scope yt-img-shadow" alt="" width="30" src="https://yt3.ggpht.com/ytc/AAUvwnjxjvDD6Ism1PVSpkAmthT8mB6dndqQuM2q6P9U=s88-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+        <h4 class="socialAccountName">고몽</h4>
+        <hr>
+        <p class="socialAccountNameDetail">
+스토리가 있는 모든 것을 이야기 하는 스토리텔러 고몽입니다.<Br>
+1. 한국영화, 외국영화, 독립영화, 예술영화의 리뷰, 프리뷰, 큐레이션<Br>
+2. 김시선과 함께하는 오늘밤엔이영화<Br>
+3. 미국코믹스, 일본애니메이션의 소개 및 분석<Br>
+4. 미드, 영드, 일드 , 한드 추천<Br>
+5. 도서, 게임 스토리<Br>
+6. 예능<Br>
+7. 아이템소개<Br>
+8. 약간의 브이로그<Br>
+   <Br>
+소통 및 비즈니스는 dl_gomong@semicolonstudio.com 로 연락 부탁드려요!<Br>
+        </p>
+        </div>
+    </div>
+</div>
+
+
+
+<!--타이틀-->
+<div style="width: 100%; margin-top:40px;">
+    <div style="color:#6E6CBF; font-size:20px; font-weight: bold; margin-bottom:-35px; margin-left:3%; width: 50%">
+
+            <a class="more cursor" style="width:20px;height:20px;" onClick="location.href='board/list'">
+                커뮤니티 최신글&nbsp;&nbsp;&nbsp;>
+            </a>
+            <a class="word" style="color: #404040; font-size: 17px;">
+
+            </a>
+
+    </div>
+    <div style="color:#6E6CBF; font-size:20px; font-weight: bold; margin-left:51%; width: 50%">
+            <a class="more2" style="width:20px;height:20px;" onClick="location.href='market/list'">
+                중고장터 최신글&nbsp;&nbsp;&nbsp;>
+            </a>
+            <a class="word2" style="color: #404040; font-size: 17px;">
+
+            </a>
+
+    </div>
+</div>
+
+
+<!--커뮤니티 내용-->
+<div class="slideshow-container2">
+
+        <div style="width: 46.5%; position: relative; display: inline-flex; margin-left:1%; top:-60px;">
+            <table class="tbl-ex" style="width:90%;">
+
+                {% for board in boardlist %}
+             <tr>
+                {% if board.depth == 0 %}
+                <td style="text-align: left; padding-bottom: 10px;">
+                   {% if board.title == '삭제된 글입니다.'%}
+                        {{board.title}}
+                   {% else %}
+                    <b><li style="color: #6E6CBF"><a href="{% url 'board:view' board.id page %}?kwd={{kwd}}" style="text-decoration:none; color:#404040; font-size:15px;">{{board.title}}</a></li></b>
+                   {% endif %}
+                </td>
                 </tr>
+
+
+
+              {% else %}
                 <tr>
-				<td style="font-size:13px;">{{board.content|truncatechars:100}}</td>
-			</tr>
+                    <td style="text-align: left; padding-bottom: 10px;">
+                {% if board.title == '삭제된 글입니다.'%}
+<!--{% for photo in board.photo_set.all%}-->
+<!--                         <img src="{{photo.image.url}}" width="50"><br>-->
+<!--                     {% endfor %}-->
+               {{board.title}}
+               {% else %}
+               <b><a href="{% url 'board:view' board.id page %}?kwd={{kwd}}" style="text-decoration:none; color:#404040;">{{board.title}}</a></b>
+                        {% endif %}
+                </td>
+              {% endif %}
+                </tr>
 
-		{% endfor %}
+                <tr>
+            <td style="font-size:12px; padding-bottom: 10px;">{{board.content|truncatechars:150}}<hr style="color: lightgray;"></td>
+             </tr>
 
-	</table>
+              {% endfor %}
+
+           </table>
         </div>
-        <hr size="1" color="#404040;" style="width:0px; height:200px; display:inline; position:absolute; border-right: 0px; margin-left:30px;">
-        <div style="width: 46.5%; position: relative; display: inline-flex; margin-left: 55px;" >
-            <article >
-    <header>
-        <div>
-            <div>
-                <img>
+
+
+<!--중간줄-->
+        <hr size="1" color="#404040;" style="width:0px; height:260px; display:inline; position:absolute; border-right: 0px; margin-left:12px;">
+
+
+<!--중고장터 내용-->
+        <div style="width: 46.5%; position: relative; display: inline-flex; margin-left: 50px; margin-top: 35px;" >
+
+            {% for market in marketlist %}
+         <div class="market_card" onclick="location.href='{% url 'market:view' market.id page %}?kwd={{kwd}}'">
+            {% if market.depth == 0 %}
+<!--            <td style="text-align: left; width:25%">-->
+               {% if market.title == '삭제된 글입니다.'%}
+               {% for photo in market.photo_set.all%}
+                   <img src="{{photo.image.url}}" style="width: 130px; height: 130px;"><br>
+               {% endfor %}
+
+               {% else %}
+               {% for photo in market.photo_set.all%}
+               <img class="market_img" src="{{photo.image.url}}" style="width: 130px; height: 130px;">
+               {% endfor %}
+               <div class="market_text">{{market.title}}</div>
+               <div class="market_text"><strong>{{market.price}}</strong></div>
+               <div class="market_text">{{market.user.name}}</div>
+               {% endif %}
             </div>
+      {% else %}
             <div>
-                <h4><a>Author</a></h4>
-                <ul>
-                    <li><a href="#">12 days ago</a></li>
-                    <li><a href="#">Reply</a></li>
-                </ul>
+               {% if market.title == '삭제된 글입니다.'%}
+               <img src="/assets/images/reply.png">
+               {% for photo in market.photo_set.all%}
+                   <img src="{{photo.image.url}}" style="width: 130px; height: 130px;"><br>
+               {% endfor %}
+               {{market.title}}
+               {% else %}
+               <img src="/assets/images/reply.png" style="margin-right:5%;"><a href="{% url 'market:view' market.id page %}?kwd={{kwd}}" style="color:#6A84B7;">{{market.title}}</a>
+               {% endif %}
             </div>
+      {% endif %}
+      {% endfor %}
         </div>
-    </header>
-    <div class="uk-comment-body">
-        <p>하이</p>
-    </div>
-</article>
-        </div>
-         <div style="margin-top:20px;"></div>
-    <button style="width: 46.4%;" onClick="location.href='board/list'" class="homebutton">커뮤니티 더보기</button>
-    <button style="width: 46.4%; margin-left:50px;" onClick="location.href='market/market'" class="homebutton">중고장터 더보기</button>
-    </div>
 
 
-
-<br>
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -138,4 +338,6 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
+
+
 {% endblock %}
