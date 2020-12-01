@@ -17,4 +17,5 @@ urlpatterns = [
     path('etc', views.etc, name='etc'),
     path('accountform', views.accountform, name='accountform'),
     path('recommendation', views.recommendation, name='recommendation'),
+
 ]

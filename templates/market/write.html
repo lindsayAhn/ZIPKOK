@@ -18,7 +18,7 @@
 
 			<tr>
 				<td>
-				<select name="category" class="formcontrol" style="width:10%;">
+				<select name="category" class="formcontrol" style="width:12.5%;">
 					<option value=""> </option>
 					<option>디지털/가전</option>
 					<option>가구/인테리어</option>
@@ -35,11 +35,12 @@
 			</tr>
 			<tr>
 
-				<input type="file" name="imgs" multiple>
+				<input type="file" name="imgs" multiple >
 			</tr>
 			<tr>
 <!--				<td class="label">제목</td>-->
-				<td><input type="text" name="price" placeholder="가격을 입력해주세요" class="formcontrol" style="height:40px;"></td>
+				<td><input type="text" name="price" id="price" placeholder="가격을 입력해주세요" class="formcontrol" style="height:40px; width:89%; ">
+				<input type="button" onclick="free()" value="무료나눔" class="btn" style="height:40px; width:10%; border-radius:3px; font-size: 15px; text-align:center;"></td>
 			</tr>
 			<tr>
 <!--				<td class="label">제목</td>-->
@@ -62,4 +63,10 @@
 	</form>
 </div>
 	</div>
+<script>
+function free(){
+	var price = document.getElementById("price")
+	price.value = "무료나눔"
+	}
+</script>
 {% endblock%}

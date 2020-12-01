@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.sites',
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -51,6 +50,8 @@ INSTALLED_APPS = [
     'board',
     'social',
     'market',
+    'chat',
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,13 @@ AUTHENTICATION_BACKENDS=(
 )
 SITE_ID=1
 LOGIN_REDIRECT_URL = '/'
+
+ASGI_APPLICATION = 'zipkok.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}

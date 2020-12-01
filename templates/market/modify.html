@@ -18,7 +18,7 @@
 				{% endfor %}
 <tr>
 				<td>
-				<select name="category" class="formcontrol" style="width:10%">
+				<select name="category" class="formcontrol" style="width:12.5%">
 					<option id="{{market.category}}" hidden="True">{{market.category}}</option>
 					<option>디지털/가전</option>
 					<option>가구/인테리어</option>
@@ -35,10 +35,12 @@
 
 			</tr>
 			<tr>
-				<td><input type="text" name="price" value="{{market.price}}" class="formcontrol" style="height:40px;"></td>
+				<td><input type="text" id="price" name="price" value="{{market.price}}" class="formcontrol" style=" height:40px; width:89%;">
+				<input onclick="free()" value="무료나눔" class="btn" style="height:40px; width:10%; border-radius:3px; font-size: 15px; text-align:center;"></td>
+			</td>
 			</tr>
 			<tr>
-				<td><input type="text" name="title" value="{{market.title}}" class="formcontrol" style="height:40px;"></td>
+				<td><input type="text" id = "title" name="title" value="{{market.title}}" class="formcontrol" style="height:40px;"></td>
 			</tr>
 			<tr>
 				<td>
@@ -47,9 +49,24 @@
 			</tr>
 		</table>
 		<div class="bottom">
-			<input type="submit" value="수정" class="btn" style="float:right; margin-left:1%;">
+			<input type="submit" id="submit" value="수정" class="btn" style="float:right; margin-left:1%;">
 			<input type="button" value="취소" class="btn" onclick="location.href='{% url 'market:list' page %}?kwd={{kwd}}'" style="float:right">
+			<input type="button" value="판매완료" onclick="sold()" class="btn" style="float:right; margin-right:1%;">
 		</div>
 	</form>
 </div>
+<script>
+function free(){
+	var price = document.getElementById("price")
+	price.value = "무료나눔"
+	}
+</script>
+<script>
+function sold(){
+	var title = document.getElementById("title")
+	title.value = "[판매완료] " + title.value
+	var submit = document.getElementById("submit")
+	submit.click()
+	}
+</script>
 {% endblock %}

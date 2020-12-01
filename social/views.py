@@ -67,3 +67,5 @@ def recommendation(request):
     recommendation.save()
 
     return HttpResponseRedirect('/')
+
+

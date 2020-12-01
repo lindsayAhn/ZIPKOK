@@ -28,13 +28,15 @@
 					{% endfor %}
 
 					{% else %}
+
 					{% for photo in market.photo_set.all%}
 					<img class="market_img" src="{{photo.image.url}}" width="50">
 					{% endfor %}
+
 				<div class="market_text"><strong>{{market.price}}</strong></div>
 					<div class="market_text">{{market.title}}</div>
 
-					<div class="market_text">{{market.content|truncatechars:20}}</div>
+					<div class="market_text">{{market.content|truncatechars:15}}</div>
 
 					<div class="market_text">{{market.user.name}}</div>
 					{% endif %}

@@ -32,6 +32,7 @@
 					{% if request.session.authUser.email == market.user.email %}
 					<input type="button" value="삭제" class="btn" onclick="location.href='{% url 'market:delete' market.id page %}?kwd={{kwd}}'" style="float:right">
 					<input type="button" value="수정" class="btn" onclick="location.href='{% url 'market:modifyform' market.id page %}'" style="float:right; margin-right:1%;" >
+
 					{% endif %}
 				</td>
 		</tr>

@@ -20,3 +20,4 @@ def __str__(self):
 
 #    def __int__(self):
 #        return self.lowaccount, self.questType
+

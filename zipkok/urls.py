@@ -28,6 +28,7 @@ urlpatterns = [
     path('board/', include('board.urls')),
     path('social/', include('social.urls')),
     path('market/', include('market.urls')),
+    path('chat/', include('chat.urls')),
     path('accounts/', include('allauth.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

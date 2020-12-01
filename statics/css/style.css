@@ -166,7 +166,7 @@ img {vertical-align: middle;}
 
 .categorybutton {
     color:white;
-    background:#404040;
+    background:rgba(110, 108, 191, 0.4);
     height:40px;
     border-style:initial;
     width:20%;

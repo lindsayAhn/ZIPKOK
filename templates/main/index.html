@@ -236,7 +236,7 @@ awayout2@naver.com<Br>
                    {% if board.title == '삭제된 글입니다.'%}
                         {{board.title}}
                    {% else %}
-                    <b><li style="color: #6E6CBF"><a href="{% url 'board:view' board.id page %}?kwd={{kwd}}" style="text-decoration:none; color:#404040; font-size:15px;">{{board.title}}</a></li></b>
+                    <b><a href="{% url 'board:view' board.id page %}?kwd={{kwd}}" style="text-decoration:none; color:black; font-size:14px; background: linear-gradient(to top, rgba(110, 108, 191, 0.2) 100%, transparent 100%)">{{board.title}}</a></b>
                    {% endif %}
                 </td>
                 </tr>
