@@ -32,12 +32,18 @@
 	</form>
 </div>
 	<div style="margin-top:2%;">
+		<div style="font-weight:bold; font-size:12px;">Chat</div>
+		<img src="/assets/images/telegram.png" width="50" onClick="location.href='/chat/'" style="cursor:pointer;">
+
+	</div>
+
+	<div style="margin-top:2%; ">
 		<div style="font-weight:bold; font-size:12px;">Community</div>
 		<img src="/assets/images/social-media.png" onclick="location.href='{% url 'board:mylist' %}'" style="cursor:pointer;">
 		<img src="/assets/images/message.png" onclick="location.href='{% url 'board:mycomment' %}'" style="cursor:pointer; ">
 <!--		<a onclick="location.href='{% url 'board:mylist' %}'" >내가쓴글</a>-->
 	</div>
-	<br>
+
 	<div style="margin-top:2%;">
 		<div style="font-weight:bold; font-size:12px;">Market</div>
 		<img src="/assets/images/social-media.png" onclick="location.href='{% url 'market:mylist' %}'" style="cursor:pointer;">
